@@ -2,14 +2,20 @@ import {
     ADD_TODO,
     REMOVE_TODO,
     TOGGLE_TODO,
-    SET_VISIBILITY_FILTER
+    SET_VISIBILITY_FILTER,
+    REQUEST_WEATHER_START,
+    REQUEST_WEATHER_SUCCESS,
+    REQUEST_WEATHER_FAIL
 } from './actionTypes';
+import axios from 'axios';
 
 let nextId = 0;
 /**
  * 
- * action 创建函数
+ * 同步action 创建函数
  */
+
+// 添加待办项
 export function addTodo(text) {
     return {
         type: ADD_TODO,
@@ -18,6 +24,7 @@ export function addTodo(text) {
     }
 }
 
+// 待办项状态修改
 export function toggleTodo(index) {
     return {
         type: TOGGLE_TODO,
@@ -25,6 +32,7 @@ export function toggleTodo(index) {
     }
 }
 
+// 移除待办项
 export function removeTodo(index) {
     return {
         type: REMOVE_TODO,
@@ -32,9 +40,51 @@ export function removeTodo(index) {
     }
 }
 
+// 设置筛选条件
 export function setVisibilityFilter(filter) {
     return {
         type: SET_VISIBILITY_FILTER,
         filter
+    }
+}
+
+// 请求天气
+function requestWeather(){
+    return {
+        type: REQUEST_WEATHER_START
+    }
+}
+
+// 请求天气--成功
+function requestWeatherSuccess(weather){
+    return { type: REQUEST_WEATHER_SUCCESS, weather }
+}
+
+// 请求天气--失败
+function requestWeatherFail(error){
+    return { type: REQUEST_WEATHER_FAIL, error }
+}
+
+/**
+ * 异步action 
+ */
+
+ // 获取天气信息
+export function getWeatherInfo(cityCode) {
+    return dispatch => {
+        dispatch(requestWeather());
+        axios.get('/free/day',{
+            params:{
+                appid: 59541261,
+                appsecret: 'Gl7WsQ3d',
+                cityid: cityCode
+            }
+        }).then(res=>{
+            if(res.status === 200){
+                dispatch(requestWeatherSuccess(res.data))
+            }
+        }).catch(err=>{
+            dispatch(requestWeatherFail(err));
+        })
     }
 }

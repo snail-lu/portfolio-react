@@ -3,11 +3,22 @@ import {
     ADD_TODO,
     TOGGLE_TODO,
     SET_VISIBILITY_FILTER,
-    VisibilityFilters
+    VisibilityFilters,
+    REQUEST_WEATHER_START,
+    REQUEST_WEATHER_SUCCESS,
+    REQUEST_WEATHER_FAIL,
+    LOADING,
+    SUCCESS,
+    FAIL
   } from './actionTypes';
 
 const { SHOW_ALL } = VisibilityFilters;
 
+/**
+ * todos reducer
+ * @param {*} state 
+ * @param {*} action 
+ */
 function todos(state = [], action) {
   switch (action.type) {
     case ADD_TODO:
@@ -33,6 +44,11 @@ function todos(state = [], action) {
   }
 }
 
+/**
+ * visibilityFilter reducer
+ * @param {*} state 
+ * @param {*} action 
+ */
 function visibilityFilter(state = SHOW_ALL, action) {
   switch (action.type) {
     case SET_VISIBILITY_FILTER:
@@ -42,9 +58,23 @@ function visibilityFilter(state = SHOW_ALL, action) {
   }
 }
 
-const todoApp = combineReducers({
+function weatherInfo(state={}, action) {
+  switch (action.type) {
+    case REQUEST_WEATHER_START:
+      return { status: LOADING }
+    case REQUEST_WEATHER_SUCCESS: 
+      return { status: SUCCESS, weather: action.weather }
+    case REQUEST_WEATHER_FAIL: 
+      return { status: FAIL, error: action.error }
+    default:
+      return state
+  }
+}
+
+const rootReducer = combineReducers({
     visibilityFilter,
-    todos
+    todos,
+    weatherInfo
 })
 
-export default todoApp;
+export default rootReducer;
