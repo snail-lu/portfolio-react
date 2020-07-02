@@ -17,7 +17,7 @@ const App = () => (
     <Router>
         <div>
             <h1>react项目模板</h1>
-            <nav>
+            <nav className="main-nav">
                 <ul>
                     <li>
                         <NavLink to="/" exact activeClassName="selected">Home</NavLink>
