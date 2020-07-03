@@ -99,6 +99,7 @@ npm start
 ```
 
 ## 项目效果
+[查看实际项目效果](https://snail-lu.github.io/react-project-template/)
 ![img](./src/assets/images/project-preview.gif)
 
 ## 可用的Scripts
