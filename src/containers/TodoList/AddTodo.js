@@ -1,12 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addTodo } from '../redux/actions'
+import { addTodo } from '../../redux/actions'
+import styles from './AddTodo.module.scss';
 
 let AddTodo = ({ dispatch }) => {
   let input
 
   return (
-    <div>
+    <div className={styles.addtodo_box}>
       <form
         onSubmit={e => {
           e.preventDefault()
@@ -21,8 +22,10 @@ let AddTodo = ({ dispatch }) => {
           ref={node => {
             input = node
           }}
+          className={styles.input_box}
+          placeholder="输入待办事项"
         />
-        <button type="submit">Add Todo</button>
+        <button type="submit" className={styles.submit_button}>添加</button>
       </form>
     </div>
   )

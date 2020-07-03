@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import {
     ADD_TODO,
     TOGGLE_TODO,
+    DELETE_TODO,
     SET_VISIBILITY_FILTER,
     VisibilityFilters,
     REQUEST_WEATHER_START,
@@ -39,6 +40,8 @@ function todos(state = [], action) {
         }
         return todo
       })
+    case DELETE_TODO: 
+      return state.filter((todo,index)=>index!==action.index)
     default:
       return state
   }

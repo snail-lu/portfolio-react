@@ -1,6 +1,6 @@
 import {
     ADD_TODO,
-    REMOVE_TODO,
+    DELETE_TODO,
     TOGGLE_TODO,
     SET_VISIBILITY_FILTER,
     REQUEST_WEATHER_START,
@@ -33,9 +33,9 @@ export function toggleTodo(index) {
 }
 
 // 移除待办项
-export function removeTodo(index) {
+export function deleteTodo(index) {
     return {
-        type: REMOVE_TODO,
+        type: DELETE_TODO,
         index
     }
 }

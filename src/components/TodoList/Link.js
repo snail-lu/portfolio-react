@@ -1,9 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styles from './TodoList.module.scss'
 
 const Link = ({ active, children, onClick }) => {
   if (active) {
-    return <span>{children}</span>
+    return <span className={styles.current_filter_item}>{children}</span>
   }
 
   return (
@@ -13,6 +14,7 @@ const Link = ({ active, children, onClick }) => {
         e.preventDefault()
         onClick()
       }}
+      className={styles.filter_item}
     >
       {children}
     </a>

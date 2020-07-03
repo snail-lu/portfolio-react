@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getWeatherInfo } from '../redux/actions';
+import { getWeatherInfo } from '../../redux/actions';
 import { 
     LOADING,
     SUCCESS,
     FAIL 
-} from '../redux/actionTypes';
+} from '../../redux/actionTypes';
+import styles from './Weather.module.scss';
 
 class SelectCity extends Component {
     constructor(props){
@@ -22,13 +23,13 @@ class SelectCity extends Component {
         if(weather&&weather.status){
             switch(weather.status){
                 case LOADING:
-                    return <div className="weather-info">正在获取天气信息...</div>
+                    return <span className={styles.weather_info}>正在获取天气信息...</span>
                 case SUCCESS:
-                    return <div className="weather-info">{weather.weather.wea} {weather.weather.win} {weather.weather.win_speed} {weather.weather.tem_night}℃ ~ {weather.weather.tem_day}℃</div>
+                    return <span className={styles.weather_info}>{weather.weather.wea} {weather.weather.win} {weather.weather.win_speed} {weather.weather.tem_night}℃ ~ {weather.weather.tem_day}℃</span>
                 case FAIL: 
-                    return <div className="weather-info">获取天气失败</div>
+                    return <span className={styles.weather_info}>获取天气失败</span>
                 default: 
-                    return <div className="weather-info">暂无天气数据</div>
+                    return <span className={styles.weather_info}>暂无天气数据</span>
             }
         }else{
             return <div>暂无天气数据</div>
@@ -48,7 +49,7 @@ class SelectCity extends Component {
         const weather = this.weather(this.props.weather);
         let cityCode = this.state.cityCode;
         return (
-            <div>
+            <div className={styles.weather_box}>
                 { weather }
                 <select value={cityCode} onChange={this.changeCity}>
                     <option value="101020100">上海</option>

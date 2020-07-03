@@ -1,0 +1,14 @@
+.addtodo_box{
+    text-align: center;
+    .input_box{
+        height: 50px;
+        width: 400px;
+        box-sizing: border-box;
+        padding: 0 10px;
+        font-size: 18px;
+    }
+    .submit_button{
+        height: 50px;
+        padding: 0 10px;
+    }
+}
