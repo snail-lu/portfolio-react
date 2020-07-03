@@ -99,7 +99,7 @@ npm start
 ```
 
 ## 项目效果
-[img](./src/assets/images/project-preview.gif)
+![img](./src/assets/images/project-preview.gif)
 
 ## 可用的Scripts
 在项目目录中，可以运行：  
