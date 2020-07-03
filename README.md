@@ -1,68 +1,119 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+这是一个使用官方 [Create React App](https://github.com/facebook/create-react-app)脚手架搭建的react单页应用项目模板。
 
-## Available Scripts
+## 目录结构
+```
+react-project-template
+├── README.md
+├── node_modules
+├── package.json
+├── .gitignore
+├── public
+│   ├── favicon.ico
+│   ├── index.html          # 应用的页面
+│   ├── logo192.png
+│   ├── manifest.json
+│   └── robots.txt
+└── src
+    ├─ assets               # 静态资源
+    │  └─ images
+    │
+    ├─ components           # 展示组件
+    │  ├─ App
+    │  │  ├─ App.js
+    │  │  └─ App.module.scss
+    │  │
+    │  ├─ CopyRight
+    │  │  ├─ CopyRight.js
+    │  │  └─ CopyRight.module.scss
+    │  │
+    │  ├─ Home
+    │  │  ├─ Home.js
+    │  │  └─ Home.module.scss
+    │  │
+    │  ├─ TodoList
+    │  │  ├─ Link.js
+    │  │  ├─ Todo.js
+    │  │  ├─ TodoList.js
+    │  │  └─ TodoList.module.scss
+    │  │
+    │  ├─ Topics            # 二级导航，rect-router实现
+    │  │  ├─ Topic.js
+    │  │  ├─ Topics.js
+    │  │  └─ Topics.module.scss
+    │  │
+    │  └─ TopNav            # 顶部导航，react-router实现
+    │     ├─ TopNav.js
+    │     └─ TopNav.module.scss
+    │  
+    ├─ containers           # 容器组件
+    │  ├─ TodoList          # TodoList示例，使用redux实现
+    │  │  ├─ FilterLink.js
+    │  │  ├─ VisibleTodoList.js
+    │  │  ├─ AddTodo.js
+    │  │  └─ AddTodo.module.scss
+    │  │
+    │  └─ Weather           # 天气组件示例，异步action处理
+    │     ├─ Weather.js
+    │     └─ Weather.module.scss
+    │
+    ├─ redux                 # redux目录
+    │  ├─ actions.js         # action creator
+    │  ├─ actionTypes.js     # action类型定义
+    │  ├─ reducers.js        # reducer
+    │  └─ store.js           # store
+    │ 
+    ├─ utils                 # 工具类
+    │  ├─ actions.js         # action creator
+    │  ├─ actionTypes.js     # action类型定义
+    │  ├─ reducers.js        # reducer
+    │  └─ store.js           # store
+    │ 
+    ├─ utils                 # 工具类
+    │  └─ index.js          
+    ├─ index.js              # 入口js文件
+    └─ index.scss            # 公用样式
 
-In the project directory, you can run:
+```
+## 基本功能实现
+* 路由        -- react-router
+* 状态管理     -- redux
+* ajax库      -- axios 
+* css-module  -- create-react-app默认支持
+* css预处理    -- node-sass
 
-### `yarn start`
+## 基本使用
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+clone项目：  
+```
+git clone git@github.com:Snail-Lu/react-project-template.git
+```
+安装依赖： 
+```
+cd react-project-template
+npm install 
+```
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+运行项目：
+```
+npm start
+```
 
-### `yarn test`
+## 项目效果
+[img](./src/assets/images/project-preview.gif)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 可用的Scripts
+在项目目录中，可以运行：  
 
-### `yarn build`
+* `npm start` 在开发模式下运行项目
+* `npm test`  以交互式监视模式启动测试运行器
+* `npm run build` 生产构建
+* `npm run eject` 配置弹射（不可逆操作），执行后配置文件和传递依赖项会被复制到config目录下，以便自定义配置
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## 相关参考文档
+* Create React App文档 [中文](https://www.html.cn/create-react-app/docs/getting-started/) [英文](https://create-react-app.dev/docs/getting-started)
+* React文档 [中文](https://react.docschina.org/docs/getting-started.html) [英文](https://reactjs.org/docs/getting-started.html)
+* React-router [中文(非最新版本)](http://react-guide.github.io/react-router-cn/index.html) [英文](https://reacttraining.com/react-router/web/guides/quick-start) 
+* Redux [中文](http://cn.redux.js.org) [英文](https://redux.js.org/introduction/getting-started)
+* axios [中文](http://www.axios-js.com/zh-cn/docs/) [英文](https://github.com/axios/axios)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
