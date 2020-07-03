@@ -112,9 +112,9 @@ npm start
 
 
 ## 相关参考文档
-* Create React App文档 [中文](https://www.html.cn/create-react-app/docs/getting-started/) [英文](https://create-react-app.dev/docs/getting-started)
-* React文档 [中文](https://react.docschina.org/docs/getting-started.html) [英文](https://reactjs.org/docs/getting-started.html)
-* React-router [中文(非最新版本)](http://react-guide.github.io/react-router-cn/index.html) [英文](https://reacttraining.com/react-router/web/guides/quick-start) 
-* Redux [中文](http://cn.redux.js.org) [英文](https://redux.js.org/introduction/getting-started)
-* axios [中文](http://www.axios-js.com/zh-cn/docs/) [英文](https://github.com/axios/axios)
+* Create React App文档 [中文](https://www.html.cn/create-react-app/docs/getting-started/) | [英文](https://create-react-app.dev/docs/getting-started)
+* React文档 [中文](https://react.docschina.org/docs/getting-started.html) | [英文](https://reactjs.org/docs/getting-started.html)
+* React-router [中文(非最新版本)](http://react-guide.github.io/react-router-cn/index.html) | [英文](https://reacttraining.com/react-router/web/guides/quick-start) 
+* Redux [中文](http://cn.redux.js.org) | [英文](https://redux.js.org/introduction/getting-started)
+* axios [中文](http://www.axios-js.com/zh-cn/docs/) | [英文](https://github.com/axios/axios)
 
