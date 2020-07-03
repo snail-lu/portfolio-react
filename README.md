@@ -1,4 +1,4 @@
-这是一个使用官方 [Create React App](https://github.com/facebook/create-react-app)脚手架搭建的react单页应用项目模板。
+这是一个使用官方 [Create React App](https://github.com/facebook/create-react-app)脚手架搭建的react单页应用模板。
 
 ## 目录结构
 ```
