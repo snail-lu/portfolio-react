@@ -1,9 +1,9 @@
 {
-  "name": "react-project-template",
+  "name": "portfolio",
   "version": "0.1.0",
   "private": true,
   "proxy": "https://www.tianqiapi.com",
-  "homepage": "https://snail-lu.github.io/react-project-template",
+  "homepage": "https://snail-lu.github.io/portfolio",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
