@@ -1,0 +1,38 @@
+// @keyframes clockRotate {
+//     0: 
+// }
+.clock_container{
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+
+    .normal{
+        transform: rotate(-90deg);
+        color: #999;
+        transition: all .5s ease-in;
+    }
+    .current{
+        color: #4e9bf5;
+        font-size: 2.5rem;
+        transition: all .5s ease-in-out;
+    }
+    .clock_item{
+        display: flex;
+        padding: 0 10px;
+        width: 30px;
+        justify-content: center;
+    }
+    .clock_item:nth-child(2), .clock_item:nth-child(4){
+        position: relative;
+        padding-right: 20px;
+    }
+    .clock_item:nth-child(2)::after, .clock_item:nth-child(4)::after {
+        content: ":";
+        font-size: 3rem;
+        color: #4e9bf5;
+        position: absolute;
+        top: 0;
+        right: 0;
+        line-height: 1;
+    }
+}

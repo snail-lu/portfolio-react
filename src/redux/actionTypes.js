@@ -14,6 +14,8 @@ export const REQUEST_WEATHER_START = 'REQUEST_WEATHER_START';
 export const REQUEST_WEATHER_SUCCESS = 'REQUEST_WEATHER_SUCCESS';
 export const REQUEST_WEATHER_FAIL = 'REQUEST_WEATHER_FAIL';
 
+//  demo list
+export const REQUEST_DEMO_LIST = 'REQUEST_DEMO_LIST';
 /**
  * 其他常量
  */
@@ -23,6 +25,10 @@ export const VisibilityFilters = {
     SHOW_ACTIVE: 'SHOW_ACTIVE'
 }
 
+export const DemoType = {
+    EFFECT_DEMO: 'effect',
+    FUNCTIONAL_DEMO: 'functional'
+}
 export const LOADING = 'LOADING'
 export const SUCCESS = 'SUCCESS'
 export const FAIL = 'FAIL'

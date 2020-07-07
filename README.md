@@ -1,16 +1,20 @@
-这是一个使用官方 [Create React App](https://github.com/facebook/create-react-app)脚手架搭建的react单页应用模板。
+个人作品集（DEMO合集）
+
+## 项目效果
+[查看实际项目效果](https://snail-lu.github.io/portfolio/)
+
+## 基础项目模板
+基本的项目模板是另一个项目[react-project-template](https://github.com/Snail-Lu/react-project-template)
 
 ## 目录结构
 ```
-react-project-template
-├── README.md
-├── node_modules
+portfolio
+├── README.md               # 说明文档
 ├── package.json
 ├── .gitignore
-├── public
+├── public                  # 静态资源
 │   ├── favicon.ico
-│   ├── index.html          # 应用的页面
-│   ├── logo192.png
+│   ├── index.html          # html模板
 │   ├── manifest.json
 │   └── robots.txt
 └── src
@@ -74,22 +78,17 @@ react-project-template
     └─ index.scss            # 公用样式
 
 ```
-## 基本功能实现
-* 路由        -- react-router
-* 状态管理     -- redux
-* ajax库      -- axios 
-* css-module  -- create-react-app默认支持
-* css预处理    -- node-sass
+
 
 ## 基本使用
 
 clone项目：  
 ```
-git clone git@github.com:Snail-Lu/react-project-template.git
+git clone git@github.com:Snail-Lu/portfolio.git
 ```
 安装依赖： 
 ```
-cd react-project-template
+cd portfolio
 npm install 
 ```
 
@@ -97,10 +96,6 @@ npm install
 ```
 npm start
 ```
-
-## 项目效果
-[查看实际项目效果](https://snail-lu.github.io/react-project-template/)
-![img](./src/assets/images/project-preview.gif)
 
 ## 可用的Scripts
 在项目目录中，可以运行：  

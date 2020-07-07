@@ -1,0 +1,92 @@
+.demo_list_container{
+    width: 90%;
+    padding: 2rem 3rem;
+    box-sizing: border-box;
+    background: rgba(255,255,255,0.8);
+
+    // overflow-y: scroll;
+    .container_title{
+        border-bottom: 1px solid #c6c6c6;
+        font-size: 2.1rem;
+        color: #757575;
+        padding: 0 0 1rem;
+    }
+    .style_demo_item{
+        padding: 2rem 0 0;
+        font-size: 1.6rem;
+        display: flex;
+        margin-bottom: 1.5rem;
+        .date{
+            font-size: 1.3rem;
+            background: #c0e3e7;
+            // padding: 0 20px;
+            width: 12rem;
+            text-align: center;
+            display: inline-block;
+            height: 3rem;
+            line-height: 3rem;
+            position: relative;
+            margin-right: 4rem;
+        }
+        .date::after{
+            content: "";
+            top: 0;
+            left: 100%;
+            width: 0;
+            height: 0;
+            position: absolute;
+            border-top: 1.5rem solid transparent;
+            border-bottom: 1.5rem solid transparent;
+            border-left: 1.5rem solid #c0e3e7;
+        }
+
+        .info{
+            flex: 1;
+            border-bottom: 1px solid #c6c6c6;
+            padding-bottom: 1.5rem;
+        }
+        .name{
+            display: flex;
+            align-items: center;
+            .uncompleted{
+                font-size: 1rem;
+                background: red;
+                color: #fff;
+                padding: 0 0.5rem;
+                border-radius: 5px;
+                margin-left: 1rem;
+            }
+            .completed{
+                font-size: 1rem;
+                background: green;
+                color: #fff;
+                padding: 0 0.5rem;
+                border-radius: 5px;
+                margin-left: 1rem;
+            }
+        }
+        .tags_list{
+            color: #757575;
+            margin-top: 1rem;
+            .tags_item{
+                border-right: 1px solid #757575;
+                padding-right: 10px;
+                margin-right: 1rem;
+            }
+            .tags_item:last-child{
+                border: none;
+            }
+        }
+        .desc{
+            margin-top: 1rem;
+        }
+        .btn{
+            background: #E7CECB;
+            display: inline-block;
+            color: #333;
+            padding: 5px 10px;
+            font-size: 1.4rem;
+            margin-top: 10px;
+        }
+    }   
+}

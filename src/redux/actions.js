@@ -5,7 +5,8 @@ import {
     SET_VISIBILITY_FILTER,
     REQUEST_WEATHER_START,
     REQUEST_WEATHER_SUCCESS,
-    REQUEST_WEATHER_FAIL
+    REQUEST_WEATHER_FAIL,
+    REQUEST_DEMO_LIST,
 } from './actionTypes';
 import axios from 'axios';
 
@@ -63,6 +64,11 @@ function requestWeatherSuccess(weather){
 // 请求天气--失败
 function requestWeatherFail(error){
     return { type: REQUEST_WEATHER_FAIL, error }
+}
+
+//  获取DEMO_LIST
+export function requestDemoList(demoType){
+    return { type: REQUEST_DEMO_LIST, demoType}
 }
 
 /**

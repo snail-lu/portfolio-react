@@ -1,5 +1,6 @@
 html{
   height: 100%;
+  font-size: 10px;
 }
 body {
   margin: 0;
@@ -33,5 +34,5 @@ a,a:hover,a:active,a:visited,a:link,a:focus{
   outline:none;
   // background: none;
   text-decoration: none;
-  color: inherit;
+  color: #000;
 }

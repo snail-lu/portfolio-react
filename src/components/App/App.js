@@ -2,36 +2,38 @@ import React from 'react'
 import {
     BrowserRouter as Router,
     Switch,
-    Route,
-  } from 'react-router-dom';
-import VisibleTodoList from '../../containers/TodoList/VisibleTodoList'
+    Route
+} from 'react-router-dom';
+import DemoList from '../../containers/DemoList/DemoList';
+import DemoDetail from '../../containers/DemoDetail/DemoDetail';
 import Home from '../Home/Home';
-import TopNav from '../TopNav/TopNav';
-import Topics from '../Topics/Topics';
+import LeftNav from '../LeftNav/LeftNav';
 import CopyRight from '../CopyRight/CopyRight';
 import styles from './App.module.scss';
 
-const App = () => (
-    <Router>
-        <div className={styles.app}>
-            <h1 className={styles.title}>react单页应用模板</h1>
-            <TopNav />
-            <div className={styles.content}>
-                <Switch>
-                    <Route path="/todolist">
-                        <VisibleTodoList />
-                    </Route>
-                    <Route path="/topics">
-                        <Topics />
-                    </Route>
-                    <Route path="/" exact>
-                        <Home />
-                    </Route>
-                </Switch>
+const App = () => {
+    return (
+        <Router>
+            <div className={styles.app}>
+                <LeftNav />
+                <div className={styles.content}>
+                    <Switch>
+                        <Route path="/portfolio/:routerid" exact>
+                            <DemoList />
+                        </Route>
+                        <Route path="/portfolio/:routerid/:demo" exact>
+                            <DemoDetail />
+                        </Route>
+                        <Route path="/portfolio" exact>
+                            <Home />
+                        </Route>
+                    </Switch>
+                    <CopyRight />
+                </div>
             </div>
-            <CopyRight />
-        </div>
-    </Router>
-)
+        </Router>
+    )
+    
+}
 
 export default App

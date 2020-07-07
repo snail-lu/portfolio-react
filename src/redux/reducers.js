@@ -10,8 +10,10 @@ import {
     REQUEST_WEATHER_FAIL,
     LOADING,
     SUCCESS,
-    FAIL
+    FAIL,
+    REQUEST_DEMO_LIST
   } from './actionTypes';
+  import demoData from '../demo-config/demo-config';
 
 const { SHOW_ALL } = VisibilityFilters;
 
@@ -61,6 +63,11 @@ function visibilityFilter(state = SHOW_ALL, action) {
   }
 }
 
+/**
+ * 获取天气信息
+ * @param {*} state 
+ * @param {*} action 
+ */
 function weatherInfo(state={}, action) {
   switch (action.type) {
     case REQUEST_WEATHER_START:
@@ -74,10 +81,22 @@ function weatherInfo(state={}, action) {
   }
 }
 
+/**
+ * 获取demo list
+ */
+function demoList(state=[], action) {
+  switch (action.type){
+    case REQUEST_DEMO_LIST:
+      return demoData[action.demoType]
+    default: 
+      return state;
+  }
+}
+
 const rootReducer = combineReducers({
     visibilityFilter,
     todos,
-    weatherInfo
+    demoList
 })
 
 export default rootReducer;
