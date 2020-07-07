@@ -19,7 +19,7 @@ class DigitalClock extends Component {
         let date = new Date();
         let hours = date.getHours(); 
         if(hours>19){
-            clockArray[1] = [0,1,2,3,4];
+            clockArray[1] = [0,1,2,3];
         }
         hours = hours<9 ? '0'+hours : hours+''
         let h = hours.split("");
@@ -54,9 +54,6 @@ class DigitalClock extends Component {
                                 }
                                 </div>
                             </div>
-                            // {
-                            //     (index==1||index==3)?<div className={styles.clock_dot}>:</div>:null
-                            // }
                             
                         )
                     })
