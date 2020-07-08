@@ -2,10 +2,18 @@
 const effect = [
     {
         name: '动态数字时钟',
-        desc: '使用css-animation实现的动态数字时钟',
-        tags: ['CSS','CSS-animation','JavaScript'],
-        date: 'May 3, 2019',
+        desc: '简易动态数字时钟，每位数字在其列表中滚动变化，样式较为简单，代码量不大',
+        tags: ['数字时钟','CSS-transition','JavaScript'],
+        date: 'Apr 18, 2019',
         component: 'digitalclock',
+        completed: true
+    },
+    {
+        name: '动态指针时钟',
+        desc: '使用css+js实现的动态指针时钟，模拟实物时钟的运行效果',
+        tags: ['指针时钟','CSS-transition','JavaScript'],
+        date: 'Apr 19, 2019',
+        component: 'pointerclock',
         completed: true
     },
     {

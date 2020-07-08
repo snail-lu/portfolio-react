@@ -1,6 +1,8 @@
 /**
  * action 类型
  */
+export const SHOW_NAV = 'SHOW_NAV';
+export const HIDE_NAV = 'HIDE_NAV';
 // todo
 export const ADD_TODO = 'ADD_TODO';
 export const DELETE_TODO = 'DELETE_TODO';

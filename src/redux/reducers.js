@@ -11,11 +11,30 @@ import {
     LOADING,
     SUCCESS,
     FAIL,
-    REQUEST_DEMO_LIST
+    REQUEST_DEMO_LIST,
+    SHOW_NAV,
+    HIDE_NAV
   } from './actionTypes';
   import demoData from '../demo-config/demo-config';
 
 const { SHOW_ALL } = VisibilityFilters;
+
+/**
+ * LeftNav reducer
+ * @param {*} state 
+ * @param {*} action 
+ */
+function showNav(state=true, action){
+  switch (action.type) {
+    case SHOW_NAV:
+      return true;
+    case HIDE_NAV:
+      return false;
+    default: 
+      return state;
+  }
+}
+
 
 /**
  * todos reducer
@@ -96,7 +115,8 @@ function demoList(state=[], action) {
 const rootReducer = combineReducers({
     visibilityFilter,
     todos,
-    demoList
+    demoList,
+    showNav
 })
 
 export default rootReducer;

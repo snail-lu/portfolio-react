@@ -8,7 +8,7 @@ import {
 import DemoList from '../../containers/DemoList/DemoList';
 import DemoDetail from '../../containers/DemoDetail/DemoDetail';
 import Home from '../Home/Home';
-import LeftNav from '../LeftNav/LeftNav';
+import LeftNav from '../../containers/LeftNav/LeftNav';
 import CopyRight from '../CopyRight/CopyRight';
 import styles from './App.module.scss';
 

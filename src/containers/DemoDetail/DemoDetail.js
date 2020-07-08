@@ -3,10 +3,12 @@ import { useParams,withRouter } from 'react-router-dom';
 import styles from './DemoDetail.module.scss';
 import VisibleTodoList from '../TodoList/VisibleTodoList';
 import DigitalClock from '../DigitalClock/DigitalClock';
+import PointerClock from '../PointerClock/PointerClock';
 import demoData from '../../demo-config/demo-config';
 
 const components = {
     digitalclock: DigitalClock,
+    pointerclock: PointerClock,
     todolist: VisibleTodoList
 };
 
