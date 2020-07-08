@@ -37,7 +37,7 @@ const DemoList = ({ getDemoList, list }) => {
                                     <div className={styles.desc}>{item.desc}</div>
                                     {
                                         item.completed
-                                            ? <NavLink to={`/portfolio/${routerid}/${item.component}`}><span className={styles.btn}>效果展示</span></NavLink>
+                                            ? <NavLink to={`/${routerid}/${item.component}`}><span className={styles.btn}>效果展示</span></NavLink>
                                             : <div className={styles.btn}>还未完成，敬请期待</div>
                                     }
                                     
