@@ -11,13 +11,13 @@ const LeftNav = () => {
                 <div className={styles.title}>作品集</div>
             </div>
             <div className={styles.left_nav_content}>
-                    <NavLink to="/portfolio" exact activeClassName={styles.nav_item_selected}>
+                    <NavLink to="/" exact activeClassName={styles.nav_item_selected}>
                         <div className={styles.nav_item}>首页</div>
                     </NavLink>
-                    <NavLink to="/portfolio/effect" activeClassName={styles.nav_item_selected}>
+                    <NavLink to="/effect" activeClassName={styles.nav_item_selected}>
                         <div className={styles.nav_item}>特效型</div>
                     </NavLink>
-                    <NavLink to="/portfolio/functional" activeClassName={styles.nav_item_selected}>
+                    <NavLink to="/functional" activeClassName={styles.nav_item_selected}>
                         <div className={styles.nav_item}>功能型</div>
                     </NavLink>
             </div>

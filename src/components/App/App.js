@@ -19,18 +19,18 @@ const App = () => {
                 <LeftNav />
                 <div className={styles.content}>
                     <Switch>
-                        <Route path="/portfolio/:routerid" exact>
+                        <Route path="/:routerid" exact>
                             <DemoList />
                         </Route>
-                        <Route path="/portfolio/:routerid/:demo" exact>
+                        <Route path="/:routerid/:demo" exact>
                             <DemoDetail />
                         </Route>
-                        <Route path="/portfolio" exact>
+                        <Route path="/" exact>
                             <Home />
                         </Route>
-                        <Route path="/" exact>
+                        {/* <Route path="/" exact>
                             <Redirect to="/portfolio" />
-                        </Route>
+                        </Route> */}
                     </Switch>
                     <CopyRight />
                 </div>
