@@ -1,8 +1,11 @@
 .home{
     width: 90%;
+    height: 100%;
     margin: 0 auto;
     font-size: 1.6rem;
-    background: rgba(255,255,255,0.8)
+    background: rgba(255,255,255,0.8);
+    padding: 2rem 3rem;
+    box-sizing: border-box;
 }
 
 .home_content{
