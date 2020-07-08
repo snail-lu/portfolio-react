@@ -1,8 +1,9 @@
 import React from 'react'
 import {
-    BrowserRouter as Router,
+    HashRouter as Router,
     Switch,
-    Route
+    Route,
+    Redirect
 } from 'react-router-dom';
 import DemoList from '../../containers/DemoList/DemoList';
 import DemoDetail from '../../containers/DemoDetail/DemoDetail';
@@ -26,6 +27,9 @@ const App = () => {
                         </Route>
                         <Route path="/portfolio" exact>
                             <Home />
+                        </Route>
+                        <Route path="/" exact>
+                            <Redirect to="/portfolio" />
                         </Route>
                     </Switch>
                     <CopyRight />

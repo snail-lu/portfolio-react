@@ -1,10 +1,9 @@
 import React from 'react';
-import { NavLink,useRouteMatch } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from './LeftNav.module.scss';
 import avatarUrl from '../../assets/images/avatar.jpg';
 
 const LeftNav = () => {
-    let match = useRouteMatch();
     return (
         <div className={styles.left_nav}>
             <div className={styles.left_nav_title}>
