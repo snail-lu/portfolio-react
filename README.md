@@ -1,7 +1,8 @@
-个人作品集（DEMO合集）
+## 项目内容
+个人练手或者工作中有感而写下的一些Demo，要更新到退休啊😁
 
 ## 项目效果
-[查看实际项目效果](https://snail-lu.github.io/portfolio/)
+[演示地址](https://snail-lu.github.io/portfolio/)
 
 ## 基础项目模板
 基本的项目模板是另一个项目[react-project-template](https://github.com/Snail-Lu/react-project-template)
@@ -22,43 +23,27 @@ portfolio
     │  └─ images
     │
     ├─ components           # 展示组件
-    │  ├─ App
-    │  │  ├─ App.js
-    │  │  └─ App.module.scss
-    │  │
-    │  ├─ CopyRight
-    │  │  ├─ CopyRight.js
-    │  │  └─ CopyRight.module.scss
-    │  │
-    │  ├─ Home
-    │  │  ├─ Home.js
-    │  │  └─ Home.module.scss
-    │  │
-    │  ├─ TodoList
-    │  │  ├─ Link.js
-    │  │  ├─ Todo.js
-    │  │  ├─ TodoList.js
-    │  │  └─ TodoList.module.scss
-    │  │
-    │  ├─ Topics            # 二级导航，rect-router实现
-    │  │  ├─ Topic.js
-    │  │  ├─ Topics.js
-    │  │  └─ Topics.module.scss
-    │  │
-    │  └─ TopNav            # 顶部导航，react-router实现
-    │     ├─ TopNav.js
-    │     └─ TopNav.module.scss
-    │  
+    │  ├─ App               # 根组件，主要的路由在这里配置
+    │  │  
+    │  ├─ CopyRight         # CopyRight组件
+    │  │  
+    │  ├─ Home              # Home组件
+    │  │  
+    │  └─ TodoList          # TodoList的展示组件
+    │     
     ├─ containers           # 容器组件
-    │  ├─ TodoList          # TodoList示例，使用redux实现
-    │  │  ├─ FilterLink.js
-    │  │  ├─ VisibleTodoList.js
-    │  │  ├─ AddTodo.js
-    │  │  └─ AddTodo.module.scss
+    │  │ 
+    │  ├─ DemoDetail        # demo详情
+    │  │ 
+    │  ├─ DemoList          # demo列表
+    │  │ 
+    │  ├─ DigitalClock      # 数字时钟
+    │  │ 
+    │  ├─ PointerClock      # 指针时钟
+    │  │ 
+    │  ├─ LeftNav           # 左侧导航
     │  │
-    │  └─ Weather           # 天气组件示例，异步action处理
-    │     ├─ Weather.js
-    │     └─ Weather.module.scss
+    │  └─ TodoList          # TodoList的容器组件
     │
     ├─ redux                 # redux目录
     │  ├─ actions.js         # action creator
@@ -104,6 +89,7 @@ npm start
 * `npm test`  以交互式监视模式启动测试运行器
 * `npm run build` 生产构建
 * `npm run eject` 配置弹射（不可逆操作），执行后配置文件和传递依赖项会被复制到config目录下，以便自定义配置
+* `npm run deploy` 部署到github pages
 
 
 ## 相关参考文档
