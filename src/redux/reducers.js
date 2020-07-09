@@ -24,7 +24,7 @@ const { SHOW_ALL } = VisibilityFilters;
  * @param {*} state 
  * @param {*} action 
  */
-function showNav(state=true, action){
+function showNav(state=false, action){
   switch (action.type) {
     case SHOW_NAV:
       return true;
