@@ -4,17 +4,22 @@ import styles from './DemoDetail.module.scss';
 import VisibleTodoList from '../TodoList/VisibleTodoList';
 import DigitalClock from '../DigitalClock/DigitalClock';
 import PointerClock from '../PointerClock/PointerClock';
+import AudioPlayer from '../AudioPlayer/AudioPlayer';
 import demoData from '../../demo-config/demo-config';
 
+// 已完成的组件展示
 const components = {
     digitalclock: DigitalClock,
     pointerclock: PointerClock,
-    todolist: VisibleTodoList
+    todolist: VisibleTodoList,
+    audioplayer: AudioPlayer
 };
 
 const DemoDetail = (props) => {
     let { routerid, demo } = useParams();
     let demoInfo = {};
+
+    // 根据routerid在组件列表中查找组件的相关信息
     demoData[routerid].forEach((item)=>{
         if(item.component===demo){
             demoInfo = item;

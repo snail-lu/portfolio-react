@@ -86,11 +86,11 @@ const functional = [
     },
     {
         name: '音乐播放器',
-        desc: '一个本地音乐播放的音乐播放器，界面模仿网易云',
-        tags: ['CSS','CSS-animation','JavaScript'],
+        desc: '一个本地音乐播放的音乐播放器',
+        tags: ['Audio','CSS-animation','JavaScript'],
         date: 'Jul 3, 2019',
-        component: 'AudioPlayer',
-        completed: false
+        component: 'audioplayer',
+        completed: true
     },
     {
         name: '视频播放器',
