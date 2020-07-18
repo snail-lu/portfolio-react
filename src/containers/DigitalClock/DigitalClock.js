@@ -9,11 +9,13 @@ class DigitalClock extends Component {
         }
     }
     componentDidMount(){
+        // 刷新时间
         setInterval(()=>{
             this.getCurrentTime();
         },200);
     }
 
+    // 获取当前时间并进行格式转换
     getCurrentTime = () => {
         let { clockArray } = this.state;
         let date = new Date();
@@ -21,14 +23,14 @@ class DigitalClock extends Component {
         if(hours>19){
             clockArray[1] = [0,1,2,3];
         }
-        hours = hours<9 ? '0'+hours : hours+''
+        hours = hours<10 ? '0'+hours : hours+''
         let h = hours.split("");
     
         let minutes = date.getMinutes();
-        minutes = minutes<9 ? '0'+minutes : minutes+'';
+        minutes = minutes<10 ? '0'+minutes : minutes+'';
         let m = minutes.split("")
         let seconds = date.getSeconds();
-        seconds = seconds<9 ? '0'+seconds : seconds+'';
+        seconds = seconds<10 ? '0'+seconds : seconds+'';
         let s = seconds.split("");
 
         let currentTime = h.concat(m,s);
