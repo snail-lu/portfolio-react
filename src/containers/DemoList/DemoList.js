@@ -36,6 +36,10 @@ const DemoList = ({ getDemoList, list }) => {
                                     </div>
                                     <div className={styles.desc}>{item.desc}</div>
                                     {
+                                        item.bugs?<div className={styles.bugs}>不足：{item.bugs?item.bugs.join(';'):''}</div>:null
+
+                                    }
+                                    {
                                         item.completed
                                             ? <NavLink to={`/${routerid}/${item.component}`}><span className={styles.btn}>效果展示</span></NavLink>
                                             : <div className={styles.btn}>还未完成，敬请期待</div>

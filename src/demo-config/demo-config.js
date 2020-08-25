@@ -90,7 +90,8 @@ const functional = [
         tags: ['Audio','CSS-animation','JavaScript'],
         date: 'Jul 3, 2019',
         component: 'audioplayer',
-        completed: true
+        completed: true,
+        bugs: ['进度条无法拖拽','音量调节不太协调','歌词滚动播放不顺滑','碟片旋转在暂停播放时会回到原点']
     },
     {
         name: '视频播放器',

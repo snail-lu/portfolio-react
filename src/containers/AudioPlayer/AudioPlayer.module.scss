@@ -8,7 +8,7 @@
     box-sizing: border-box;
     .header {
         height: 30px;
-        background-color: red;
+        background-color: #D33A31;
         color: #fff;
         line-height: 30px;
         text-align: center;
@@ -16,11 +16,48 @@
     }
     .content {
         flex: 1;
-        text-align: center;
+        display: flex;
+        height: 0;
+        background: #fff;
+        .disc{
+            flex: 1;
+            .disc_outer{
+                background: #333;
+                border: 8px solid #eee;
+                width: 180px;
+                height: 180px;
+                border-radius: 50%;
+            }
+            .disc_inner{
+                border: 4px solid #111;
+                width: 100px;
+                height: 100px;
+                background: #fff;
+                border-radius: 50%;
+                overflow: hidden;
+            }
+            .cover_img{
+                width: 100%;
+                height: 100%;
+            }
+            .cover_img_rotate{
+                animation: rotate 10s linear infinite;
+            }
+        }
+        .lyric{
+            flex: 1;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            .lyric_text{
+                position: absolute;
+            }
+        }
     }
     .footer {
         height: 90px;
-        background-color: #ccc;
+        background-color: #fff;
+        border-top: 1px solid #eee;
         font-size: 13px;
         .music_info {
             display: flex;
@@ -30,19 +67,16 @@
         .progress {
             margin: 0 20px;
             height: 6px;
-            background-color: #fff;
+            background-color: #eee;
             border-radius: 3px;
             .currentPro{
                 height: 6px;
                 width: 0;
-                background-color:#888;
+                background-color: #D33A31;
                 border-radius: 3px;
             } 
         }
         .controls {
-            display: flex;
-            justify-content: center;
-            align-items: center;
             position: relative;
             .switch {
                 font-size:45px;
@@ -50,18 +84,23 @@
                 text-align:center;
                 cursor:pointer;
                 margin: 0 30px;
+                color: #D33A31;
             }
             .prev{
                 font-size:20px;
                 line-height:35px;
                 text-align:center;
                 cursor:pointer;
+                color: #D33A31;
+
             }
             .next{
                 font-size:20px;
                 line-height:35px;
                 text-align:center;
                 cursor:pointer;
+                color: #D33A31;
+
             }
             .volume{
                 position: absolute;
@@ -74,6 +113,7 @@
             .volume {
                 display: flex;
                 justify-content: space-between;
+                color: #D33A31;
                 .volume_icon{
                     height:30px;
                     line-height:30px;
@@ -88,6 +128,12 @@
         }
     }
 
+    .flex_center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
 }
 
 @keyframes move{
@@ -97,5 +143,14 @@
 	100%{
 		transform: translate(-2400px);
 	}
+}
+
+@keyframes rotate{
+    from{
+        transform: rotate(0deg)
+    }
+    to{
+        transform: rotate(360deg)
+    }
 }
 
