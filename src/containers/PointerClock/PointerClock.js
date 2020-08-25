@@ -5,6 +5,8 @@ import styles from './PointerClock.module.scss';
 class DigitalClock extends Component {
     constructor(props){
         super(props);
+        this.state = {
+        }
     }
     componentDidMount(){
         setInterval(()=>{
