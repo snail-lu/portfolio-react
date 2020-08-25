@@ -82,6 +82,16 @@ npm install
 npm start
 ```
 
+生产构建：
+```
+npm run build
+```
+
+部署到github pages：
+```
+npm run deploy
+```
+
 ## 可用的Scripts
 在项目目录中，可以运行：  
 
