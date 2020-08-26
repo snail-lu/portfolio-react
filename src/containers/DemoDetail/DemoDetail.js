@@ -5,7 +5,7 @@ import VisibleTodoList from '../TodoList/VisibleTodoList';
 import DigitalClock from '../DigitalClock/DigitalClock';
 import PointerClock from '../PointerClock/PointerClock';
 import AudioPlayer from '../AudioPlayer/AudioPlayer';
-import demoData from '../../demo-config/demo-config';
+import demoData from '../../config/demo-list';
 
 // 已完成的组件展示
 const components = {

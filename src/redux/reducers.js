@@ -15,7 +15,7 @@ import {
     SHOW_NAV,
     HIDE_NAV
   } from './actionTypes';
-  import demoData from '../demo-config/demo-config';
+  import demoData from '../config/demo-list';
 
 const { SHOW_ALL } = VisibilityFilters;
 
