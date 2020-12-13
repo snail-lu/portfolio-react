@@ -1,9 +1,8 @@
 import React from 'react'
 import {
-    HashRouter as Router,
+    BrowserRouter as Router,
     Switch,
-    Route,
-    Redirect
+    Route
 } from 'react-router-dom';
 import DemoList from '../../containers/DemoList/DemoList';
 import DemoDetail from '../../containers/DemoDetail/DemoDetail';
@@ -14,7 +13,7 @@ import styles from './App.module.scss';
 
 const App = () => {
     return (
-        <Router>
+        <Router basename="/portfolio/">
             <div className={styles.app}>
                 <LeftNav />
                 <div className={styles.content}>
