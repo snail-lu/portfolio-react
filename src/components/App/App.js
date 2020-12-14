@@ -13,7 +13,7 @@ import styles from './App.module.scss';
 
 const App = () => {
     return (
-        <Router basename="/portfolio/">
+        <Router basename="/portfolio">
             <div className={styles.app}>
                 <LeftNav />
                 <div className={styles.content}>
