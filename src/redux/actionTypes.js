@@ -28,8 +28,8 @@ export const VisibilityFilters = {
 }
 
 export const DemoType = {
-    EFFECT_DEMO: 'effect',
-    FUNCTIONAL_DEMO: 'functional'
+    WORKS_DEMO: 'works',
+    WHIMS_DEMO: 'whims'
 }
 export const LOADING = 'LOADING'
 export const SUCCESS = 'SUCCESS'

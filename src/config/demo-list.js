@@ -1,5 +1,5 @@
 // 特效demo列表配置
-const effect = [
+const works = [
     {
         name: '动态数字时钟',
         desc: '简易动态数字时钟，每位数字在其列表中滚动变化，样式较为简单，代码量不大',
@@ -51,7 +51,7 @@ const effect = [
 ];
 
 // 功能demo列表配置
-const functional = [
+const whims = [
     {
         name: '商城常用促销插件',
         desc: '商城营销活动经常使用的促销插件，目前包含大转盘、红包雨、签到、九宫格、打地鼠，后续会持续更新...',
@@ -110,5 +110,5 @@ const functional = [
         completed: true
     },
 ];
-const demoList = { effect, functional };
+const demoList = { works, whims };
 export default demoList;

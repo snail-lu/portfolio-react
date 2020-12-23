@@ -8,11 +8,11 @@ import { DemoType } from '../../redux/actionTypes';
 
 const DemoList = ({ getDemoList, list }) => {
         let { routerid } = useParams();
-        getDemoList(routerid==='effect'?DemoType.EFFECT_DEMO:DemoType.FUNCTIONAL_DEMO);
+        getDemoList(routerid==='works'?DemoType.WORKS_DEMO:DemoType.WHIMS_DEMO);
         return (
             <div className={styles.demo_list_container}>
                 <div className={styles.container_title}>
-                    {routerid==='effect'?'特效型DEMO':'功能型DEMO'}
+                    {routerid==='works'?'WORKS':'WHIMS'}
                 </div>
                 {
 
