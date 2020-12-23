@@ -11,7 +11,7 @@ const LeftNav = ({show,switchClick}) => {
         return (
             <div className={`${styles.left_nav} ${styles.left_nav_to_show}`}>
                 <div className={styles.left_nav_title}>
-                    <img src={avatarUrl} className={styles.avatar} />
+                    <img src={avatarUrl} className={styles.avatar} alt="头像" />
                     <div className={styles.title}>作品集</div>
                 </div>
                 <div className={styles.left_nav_content}>
