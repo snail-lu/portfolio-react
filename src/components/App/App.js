@@ -13,7 +13,6 @@ const App = () => {
     return (
         <Router basename="/portfolio">
             <div className={styles.app}>
-                {/* <LeftNav /> */}
                 <div className={styles.content}>
                     <Switch>
                         <Route path="/:routerid" exact>

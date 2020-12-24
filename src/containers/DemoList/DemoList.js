@@ -5,16 +5,25 @@ import styles from './DemoList.module.scss';
 import { connect } from 'react-redux'
 import { requestDemoList } from '../../redux/actions'
 import { DemoType } from '../../redux/actionTypes';
+import TopNav from '../TopNav/TopNav';
 
 const DemoList = ({ getDemoList, list }) => {
         let { routerid } = useParams();
         getDemoList(routerid==='works'?DemoType.WORKS_DEMO:DemoType.WHIMS_DEMO);
         return (
             <div className={styles.demo_list_container}>
-                <div className={styles.container_title}>
-                    <div>菜单</div>
+                {/* <div className={styles.container_title}>
+                    <div class={styles.menu_bar} onClick="showMenuList">
+                        <span>MENU</span>
+                        <ul class={styles.menu_list}>
+                            <li class={styles.menu_item}>HOME</li>
+                            <li class={styles.menu_item}>WHIMS</li>
+                            <li class={styles.menu_item}>ABOUT</li>
+                        </ul>
+                    </div>
                     <div>{routerid==='works'?'WORKS':'WHIMS'}</div>
-                </div>
+                </div> */}
+                <TopNav routerid={routerid} />
                 <div className={styles.demo_list}>
                     {
                         list.map((item)=>{
@@ -28,9 +37,7 @@ const DemoList = ({ getDemoList, list }) => {
                                         }
                                     </div>
                                     <div className={styles.info}>
-                                        <h3 className={styles.name}>
-                                            <span>{item.name}</span>
-                                        </h3>
+                                        <div className={styles.name}>{item.name}</div>
                                         <div className={styles.tags_list}>
                                             {
                                                 item.tags.map(tag=>{

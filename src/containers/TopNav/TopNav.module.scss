@@ -103,3 +103,58 @@
     animation: rightarrowmove .8s ease both infinite;
 }
 
+
+// 新的
+.top_nav{
+    font-size: 2.1rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    color: #000;
+
+    .menu_bar {
+        cursor: pointer;
+        position: relative;
+        padding-left: 3.4rem;
+        transition: all 1s linear;
+
+        ul {
+            display: flex;
+        }
+
+        &.active {
+            &:before {
+                transform-origin: 50% 50%;
+                top: 50%;
+                transform: rotate(45deg);
+            }
+            &:after {
+                transform-origin: 50% 50%;
+                top: 50%;
+                transform: rotate(-45deg);
+            }
+        }
+
+        &:before, &:after{
+            content: "";
+            display: block;
+            width: 2.5rem;
+            border-top: 2px solid #000;
+            position: absolute;
+        }
+        &:before {
+            top: 34%;
+            left: 0;
+        }
+        &:after {
+            left: 0;
+            bottom: 30%;
+        }
+
+        .menu_item {
+            margin-right: 1rem;
+        }
+
+    }
+}
+
