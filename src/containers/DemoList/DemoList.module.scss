@@ -15,7 +15,7 @@
     .demo_list {
         display: grid;
         grid-template-columns: repeat(4, 23.5%);
-        gap: 2%;
+        gap: 4% 2%;
     }
     .demo_item{
         font-size: 1.6rem;
