@@ -1,4 +1,4 @@
-import React , { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types'
 import { useParams,NavLink } from 'react-router-dom';
 import styles from './DemoList.module.scss';
@@ -12,44 +12,43 @@ const DemoList = ({ getDemoList, list }) => {
         return (
             <div className={styles.demo_list_container}>
                 <div className={styles.container_title}>
-                    {routerid==='works'?'WORKS':'WHIMS'}
+                    <div>菜单</div>
+                    <div>{routerid==='works'?'WORKS':'WHIMS'}</div>
                 </div>
-                {
-
-                    list.map((item,index)=>{
-                        return (
-                            <div className={styles.style_demo_item} key={item.component}>
-                                <div className={styles.date}>{item.date}</div>
-                                <div className={styles.info}>
-                                    <h3 className={styles.name}>
-                                        <span>{item.name}</span>
-                                        <span className={item.completed?styles.completed:styles.uncompleted}>{item.completed?'已完成':'开发中'}</span>
-                                    </h3>
-                                    <div className={styles.tags_list}>
+                <div className={styles.demo_list}>
+                    {
+                        list.map((item)=>{
+                            return (
+                                <div className={styles.demo_item} key={item.component}>
+                                    <div className={styles.header}>
                                         {
-                                            item.tags.map(tag=>{
-                                                return (
-                                                    <span className={styles.tags_item} key={tag}>{tag}</span>
-                                                )
-                                            })
+                                            item.completed
+                                            ? <NavLink to={`/${routerid}/${item.component}`} className={styles.view_btn}>View</NavLink>
+                                            : <span className={styles.development}>In Development</span>
                                         }
                                     </div>
-                                    <div className={styles.desc}>{item.desc}</div>
-                                    {
-                                        item.bugs?<div className={styles.bugs}>不足：{item.bugs?item.bugs.join(';'):''}</div>:null
-
-                                    }
-                                    {
-                                        item.completed
-                                            ? <NavLink to={`/${routerid}/${item.component}`}><span className={styles.btn}>效果展示</span></NavLink>
-                                            : <div className={styles.btn}>还未完成，敬请期待</div>
-                                    }
-                                    
+                                    <div className={styles.info}>
+                                        <h3 className={styles.name}>
+                                            <span>{item.name}</span>
+                                        </h3>
+                                        <div className={styles.tags_list}>
+                                            {
+                                                item.tags.map(tag=>{
+                                                    return (
+                                                        <span className={styles.tags_item} key={tag}>{tag}</span>
+                                                    )
+                                                })
+                                            }
+                                        </div>
+                                        <div className={styles.desc}>{item.desc}</div>
+                                        <div className={styles.date}>{item.date}</div>
+                                        
+                                    </div>
                                 </div>
-                            </div>
-                        )
-                    })
-                }
+                            )
+                        })
+                    }
+                </div>
             </div>
         )
     

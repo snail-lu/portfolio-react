@@ -10,7 +10,7 @@ const Home = () => {
             </div>
             <div className={styles.tab_list}>
                 <NavLink to="/" exact className={styles.tab_item}><span>Home</span></NavLink>
-                <NavLink to="/wroks" className={styles.tab_item}><span>Works</span></NavLink>
+                <NavLink to="/works" className={styles.tab_item}><span>Works</span></NavLink>
                 <NavLink to="/whims" className={styles.tab_item}><span>Whims</span></NavLink>
                 <NavLink to="/about" className={styles.tab_item}><span>About</span></NavLink>
                 <NavLink to="/about" className={styles.tab_item}><span>About</span></NavLink>

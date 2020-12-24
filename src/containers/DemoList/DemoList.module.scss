@@ -1,95 +1,89 @@
 .demo_list_container{
-    width: 90%;
-    padding: 2rem 3rem;
+    width: 100%;
+    min-height: 100%;
+    padding: 2rem 5rem;
     box-sizing: border-box;
-    background: rgba(255,255,255,0.8);
+    background: rgba(5, 139, 228, 0.8);
 
-    // overflow-y: scroll;
     .container_title{
-        border-bottom: 1px solid #c6c6c6;
         font-size: 2.1rem;
-        color: #757575;
         padding: 0 0 1rem;
-    }
-    .style_demo_item{
-        padding: 2rem 0 0;
-        font-size: 1.6rem;
         display: flex;
-        margin-bottom: 1.5rem;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+    .demo_list {
+        display: grid;
+        grid-template-columns: repeat(4, 23.5%);
+        gap: 2%;
+    }
+    .demo_item{
+        font-size: 1.6rem;
+        background-color: #fff;
+        font-family: serif;
+
+        .header {
+            width: 100%;
+            background-color: #000;
+            height: 15rem;
+            position: relative;
+            .development{
+                position: absolute;
+                font-size: 1.4rem;
+                top: 50%;
+                left: 50%;
+                background: red;
+                color: #fff;
+                padding: 1rem;
+                border-radius: 5px;
+                margin-left: 1rem;
+                transform: translate(-50%,-50%);
+            }
+            .view_btn{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 4rem;
+                height: 4rem;
+                line-height: 4rem;
+                text-align: center;
+                display: inline-block;
+                color: #fff;
+                font-size: 1.4rem;
+                transform: translate(-50%,-50%);
+                border: 1px solid #fff;
+                border-radius: 50%;
+            }
+        }
+
         .date{
-            font-size: 1.3rem;
-            background: #c0e3e7;
-            // padding: 0 20px;
-            width: 12rem;
-            text-align: center;
-            display: inline-block;
+            font: bold 1.3rem fantasy;
+            text-align: right;
             height: 3rem;
             line-height: 3rem;
             position: relative;
-            margin-right: 4rem;
-        }
-        .date::after{
-            content: "";
-            top: 0;
-            left: 100%;
-            width: 0;
-            height: 0;
-            position: absolute;
-            border-top: 1.5rem solid transparent;
-            border-bottom: 1.5rem solid transparent;
-            border-left: 1.5rem solid #c0e3e7;
         }
 
         .info{
-            flex: 1;
-            border-bottom: 1px solid #c6c6c6;
-            padding-bottom: 1.5rem;
+            padding: 1.5rem;
         }
         .name{
             display: flex;
             align-items: center;
-            .uncompleted{
-                font-size: 1rem;
-                background: red;
-                color: #fff;
-                padding: 0 0.5rem;
-                border-radius: 5px;
-                margin-left: 1rem;
-            }
-            .completed{
-                font-size: 1rem;
-                background: green;
-                color: #fff;
-                padding: 0 0.5rem;
-                border-radius: 5px;
-                margin-left: 1rem;
-            }
         }
         .tags_list{
-            color: #757575;
+            color: #fff;
             margin-top: 1rem;
+            font-size: 1.2rem;
             .tags_item{
-                border-right: 1px solid #757575;
-                padding-right: 10px;
+                padding: 0.2rem 0.5rem;
+                background-color: rgb(247, 25, 9);
                 margin-right: 1rem;
-            }
-            .tags_item:last-child{
-                border: none;
             }
         }
         .desc{
             margin-top: 1rem;
-        }
-        .bugs{
-            color: #333;
-        }
-        .btn{
-            background: #E7CECB;
-            display: inline-block;
-            color: #333;
-            padding: 5px 10px;
             font-size: 1.4rem;
-            margin-top: 10px;
         }
     }   
 }
