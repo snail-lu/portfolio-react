@@ -1,19 +1,20 @@
 import React from 'react';
 import styles from './Home.module.scss';
 import { NavLink } from 'react-router-dom';
+import avatarUrl from '../../assets/images/avatar.jpg';
 
 const Home = () => {
     return (
         <div className={styles.home}>
-            <div className={styles.title}>
-                <p className={styles.title_txt}>Portfolio</p>
+            <div className={styles.coin_box}>
+                <img className={styles.coin_front} src={avatarUrl} alt=""></img>
+                <div className={styles.coin_back}>Portfolio</div>
+                {/* <p className={styles.title_txt}>Portfolio</p> */}
             </div>
-            <div className={styles.tab_list}>
-                <NavLink to="/" exact className={styles.tab_item}><span>Home</span></NavLink>
-                <NavLink to="/works" className={styles.tab_item}><span>Works</span></NavLink>
-                <NavLink to="/whims" className={styles.tab_item}><span>Whims</span></NavLink>
-                <NavLink to="/about" className={styles.tab_item}><span>About</span></NavLink>
-                <NavLink to="/about" className={styles.tab_item}><span>About</span></NavLink>
+            <div className={styles.nav_list}>
+                <NavLink to="/works" className={styles.nav_item}><span className={styles.nav_label}>Works</span></NavLink>
+                <NavLink to="/whims" className={styles.nav_item}><span className={styles.nav_label}>Whims</span></NavLink>
+                <NavLink to="/about" className={styles.nav_item}><span className={styles.nav_label}>About</span></NavLink>
             </div>
         </div>
     )
