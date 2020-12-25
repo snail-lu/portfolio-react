@@ -41,7 +41,7 @@ portfolio
     │  │ 
     │  ├─ PointerClock      # 指针时钟
     │  │ 
-    │  ├─ LeftNav           # 左侧导航
+    │  ├─ TopNav            # 顶部导航
     │  │
     │  └─ TodoList          # TodoList的容器组件
     │
