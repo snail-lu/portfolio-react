@@ -28,11 +28,12 @@ const TopNav = ({show,switchClick,routerid}) => {
                 {
                   show
                   ?(
-                    <ul>
-                      <li className={styles.menu_item}>HOME</li>
-                      <li className={styles.menu_item}>WHIMS</li>
-                      <li className={styles.menu_item}>ABOUT</li>
-                    </ul>
+                    <div className={styles.menu_list}>
+                      <NavLink to="/" exact className={styles.menu_item} activeClassName={styles.selected} onClick={e=>e.stopPropagation()}>HOME</NavLink>
+                      <NavLink to="/works" className={styles.menu_item} activeClassName={styles.selected} onClick={e=>e.stopPropagation()}>WROKS</NavLink>
+                      <NavLink to="/whims" className={styles.menu_item} activeClassName={styles.selected} onClick={e=>e.stopPropagation()}>WHIMS</NavLink>
+                      <NavLink to="/about" className={styles.menu_item} activeClassName={styles.selected} onClick={e=>e.stopPropagation()}>ABOUT</NavLink>
+                    </div>
                   )
                   :"MENU"
                 }
@@ -61,6 +62,7 @@ const mapStateToProps = state => {
   const mapDispatchToProps = dispatch => {
     return {
       switchClick: type => {
+        
         dispatch(showNav(type))
       }
     }

@@ -116,33 +116,35 @@
         cursor: pointer;
         position: relative;
         padding-left: 3.4rem;
-        transition: all 1s linear;
+        user-select: none;
 
-        ul {
+        .menu_list {
             display: flex;
         }
 
         &.active {
-            &:before {
-                transform-origin: 50% 50%;
+            &::before {
                 top: 50%;
+                transform-origin: center;
                 transform: rotate(45deg);
             }
-            &:after {
-                transform-origin: 50% 50%;
+            &::after {
                 top: 50%;
+                transform-origin: center;
                 transform: rotate(-45deg);
             }
         }
 
-        &:before, &:after{
+        &::before, &::after{
             content: "";
             display: block;
             width: 2.5rem;
-            border-top: 2px solid #000;
+            height: 2px;
+            background-color: #000;
             position: absolute;
+            transition: all 0.6s linear;
         }
-        &:before {
+        &::before {
             top: 34%;
             left: 0;
         }
@@ -153,8 +155,13 @@
 
         .menu_item {
             margin-right: 1rem;
+            user-select: none;
+            &.selected{
+                position: relative;
+                text-decoration: white wavy underline;
+                color: #fff;
+            }
         }
-
     }
 }
 
