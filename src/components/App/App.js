@@ -7,6 +7,8 @@ import {
 import DemoList from '../../containers/DemoList/DemoList';
 import DemoDetail from '../../containers/DemoDetail/DemoDetail';
 import Home from '../Home/Home';
+import About from '../About/About';
+import TopNav from '../../containers/TopNav/TopNav';
 import styles from './App.module.scss';
 
 const App = () => {
@@ -14,7 +16,11 @@ const App = () => {
         <Router basename="/portfolio">
             <div className={styles.app}>
                 <div className={styles.content}>
+                    <TopNav />
                     <Switch>
+                        <Route path="/about">
+                            <About />
+                        </Route>
                         <Route path="/:routerid" exact>
                             <DemoList />
                         </Route>

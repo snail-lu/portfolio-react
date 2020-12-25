@@ -1,13 +1,6 @@
-.title{
-    text-align: center;
-}
-
 .app{
-    display: flex;
     height: 100%;
     width: 100%;
-    // background: url(../../assets/images/site-bg.jpg);
-    background-size: cover;
 }
 
 .content{
@@ -18,5 +11,6 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    background-color: #0099cc;
 }
 
