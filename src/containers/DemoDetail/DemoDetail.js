@@ -28,8 +28,8 @@ const DemoDetail = (props) => {
     const RenderComponent = components[demo];
     return (
         <div className={styles.demo_detail_container}>
-            <div className={styles.container_title}>
-                <span onClick={()=>props.history.goBack()} className={styles.left_arrow}></span>
+            <div className={styles.title}>
+                <span onClick={()=>props.history.goBack()} className={styles.back_icon}></span>
                 <span>{demoInfo.name}</span>
             </div>
             <RenderComponent />

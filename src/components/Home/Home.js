@@ -8,8 +8,7 @@ const Home = () => {
         <div className={styles.home}>
             <div className={styles.coin_box}>
                 <img className={styles.coin_front} src={avatarUrl} alt=""></img>
-                <div className={styles.coin_back}>Portfolio</div>
-                {/* <p className={styles.title_txt}>Portfolio</p> */}
+                <div className={styles.coin_back}>作品集</div>
             </div>
             <div className={styles.nav_list}>
                 <NavLink to="/works" className={styles.nav_item}><span className={styles.nav_label}>Works</span></NavLink>

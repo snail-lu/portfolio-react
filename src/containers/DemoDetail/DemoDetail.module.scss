@@ -1,23 +1,27 @@
 .demo_detail_container{
-    width: 90%;
+    width: 60%;
     padding: 2rem 3rem;
     box-sizing: border-box;
-    background: rgba(255,255,255,0.8);
+    background: rgb(255,255,255);
     height: 100%;
 
-    .container_title{
-        border-bottom: 1px solid #c6c6c6;
+    .title{
         font-size: 2.1rem;
-        color: #757575;
-        padding: 0 0 1rem;
+        color: #333;
+        text-align: center;
+        position: relative;
     }
-    .left_arrow{
+    .back_icon{
+        cursor: pointer;
+        position: absolute;
+        left: 0;
+        top: 50%;
         display: inline-block;
-        width: 1.2rem;
-        height: 1.2rem;
+        width: 1rem;
+        height: 1rem;
         border-top: 2px solid #757575;
-        border-right: 2px solid #757575;
-        transform: rotate(-135deg);
-        margin-right: 1rem;
+        border-left: 2px solid #757575;
+        transform-origin: center;
+        transform: rotate(-45deg) translateY(-50%);
     }
 }
