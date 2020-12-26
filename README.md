@@ -1,8 +1,8 @@
 ## 项目内容
-个人练手或者工作中有感而写下的一些Demo，持续不定时更新...😁
+个人作品集项目
 
 ## 项目效果
-[演示地址](https://snail-lu.github.io/portfolio/)
+[演示地址](https://yes-i-do.cn/portfolio/)
 
 ## 基础项目模板
 基本的项目模板是另一个项目[react-project-template](https://github.com/Snail-Lu/react-project-template)
