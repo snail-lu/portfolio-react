@@ -13,8 +13,8 @@ const TopNav = ({ show, switchClick }) => {
           show
           ?(<div className={styles.menu_list}>
               <NavLink to="/" exact className={styles.menu_item} activeClassName={styles.selected} onClick={e=>e.stopPropagation()}>HOME</NavLink>
-              <NavLink to="/works" className={styles.menu_item} activeClassName={styles.selected} onClick={e=>e.stopPropagation()}>WROKS</NavLink>
-              <NavLink to="/whims" className={styles.menu_item} activeClassName={styles.selected} onClick={e=>e.stopPropagation()}>WHIMS</NavLink>
+              <NavLink to="/project" className={styles.menu_item} activeClassName={styles.selected} onClick={e=>e.stopPropagation()}>PROJECT</NavLink>
+              <NavLink to="/demo" className={styles.menu_item} activeClassName={styles.selected} onClick={e=>e.stopPropagation()}>DEMO</NavLink>
               <NavLink to="/about" className={styles.menu_item} activeClassName={styles.selected} onClick={e=>e.stopPropagation()}>ABOUT</NavLink>
             </div>)
           :"MENU"

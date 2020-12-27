@@ -16,11 +16,11 @@ const components = {
 };
 
 const DemoDetail = (props) => {
-    let { routerid, demo } = useParams();
+    let { demo } = useParams();
     let demoInfo = {};
 
     // 根据routerid在组件列表中查找组件的相关信息
-    demoData[routerid].forEach((item)=>{
+    demoData.forEach((item)=>{
         if(item.component===demo){
             demoInfo = item;
         }

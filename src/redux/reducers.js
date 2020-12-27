@@ -106,7 +106,7 @@ function weatherInfo(state={}, action) {
 function demoList(state=[], action) {
   switch (action.type){
     case REQUEST_DEMO_LIST:
-      return demoData[action.demoType]
+      return demoData;
     default: 
       return state;
   }

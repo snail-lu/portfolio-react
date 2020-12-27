@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import DemoList from '../../containers/DemoList/DemoList';
 import DemoDetail from '../../containers/DemoDetail/DemoDetail';
+import Projects from '../Projects/Projects';
 import Home from '../Home/Home';
 import About from '../About/About';
 import TopNav from '../../containers/TopNav/TopNav';
@@ -21,10 +22,13 @@ const App = () => {
                         <Route path="/about">
                             <About />
                         </Route>
-                        <Route path="/:routerid" exact>
+                        <Route path="/project" exact>
+                            <Projects />
+                        </Route>
+                        <Route path="/demo" exact>
                             <DemoList />
                         </Route>
-                        <Route path="/:routerid/:demo" exact>
+                        <Route path="/demo/:demo" exact>
                             <DemoDetail />
                         </Route>
                         <Route path="/" exact>

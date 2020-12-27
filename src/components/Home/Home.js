@@ -11,8 +11,8 @@ const Home = () => {
                 <div className={styles.coin_back}>作品集</div>
             </div>
             <div className={styles.nav_list}>
-                <NavLink to="/works" className={styles.nav_item}><span className={styles.nav_label}>Works</span></NavLink>
-                <NavLink to="/whims" className={styles.nav_item}><span className={styles.nav_label}>Whims</span></NavLink>
+                <NavLink to="/project" className={styles.nav_item}><span className={styles.nav_label}>Project</span></NavLink>
+                <NavLink to="/demo" className={styles.nav_item}><span className={styles.nav_label}>Demo</span></NavLink>
                 <NavLink to="/about" className={styles.nav_item}><span className={styles.nav_label}>About</span></NavLink>
             </div>
         </div>

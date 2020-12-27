@@ -19,7 +19,7 @@ const DemoList = ({ getDemoList, list }) => {
                                     <div className={styles.header}>
                                         {
                                             item.completed
-                                            ? <NavLink to={`/${routerid}/${item.component}`} className={styles.view_btn}>View</NavLink>
+                                            ? <NavLink to={`/demo/${item.component}`} className={styles.view_btn}>View</NavLink>
                                             : <span className={styles.development}>In Development</span>
                                         }
                                     </div>
