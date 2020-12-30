@@ -19,8 +19,8 @@ const DemoList = ({ getDemoList, list }) => {
                                     <div className={styles.header}>
                                         {
                                             item.completed
-                                            ? <NavLink to={`/demo/${item.component}`} className={styles.view_btn}>View</NavLink>
-                                            : <span className={styles.development}>In Development</span>
+                                            ? <NavLink to={`/demo/${item.component}`} className={styles.view_btn}>预览</NavLink>
+                                            : <span className={styles.development}>开发中</span>
                                         }
                                     </div>
                                     <div className={styles.info}>
