@@ -1,60 +1,51 @@
 // demo列表
 export default [
     {
-        name: '动态数字时钟',
-        desc: '简易动态数字时钟，每位数字在其列表中滚动变化，样式较为简单，代码量不大',
-        tags: ['数字时钟','CSS-transition','JavaScript'],
+        name: '仿美团移动端',
+        desc: '基于React实现的仿美团移动端项目',
+        tags: ['美团','React'],
         date: 'Apr 18, 2019',
-        component: 'digitalclock',
-        completed: true
+        github: "https://github.com/Snail-Lu/react-meituan",
+        url: "https://yes-i-do.cn/"
     },
     {
-        name: '动态指针时钟',
-        desc: '使用css+js实现的动态指针时钟，模拟实物时钟的运行效果',
-        tags: ['指针时钟','CSS-transition','JavaScript'],
+        name: '商城小程序',
+        desc: '基于云开发的商城微信小程序',
+        tags: ['商城','小程序','云开发'],
         date: 'Apr 19, 2019',
-        component: 'pointerclock',
-        completed: true
+        github: 'https://github.com/Snail-Lu/DevMall',
+        url: "https://yes-i-do.cn/"
     },
     {
-        name: '商城常用促销插件',
-        desc: '商城营销活动经常使用的促销插件，目前包含大转盘、红包雨、签到、九宫格、打地鼠，后续会持续更新...',
-        tags: ['CSS','CSS-animation','JavaScript'],
+        name: '仿豆瓣移动端',
+        desc: '基于vue实现的仿豆瓣移动端项目',
+        tags: ['豆瓣','VUE'],
         date: 'Jun 3, 2019',
-        component: 'SalesComponent',
-        completed: false
+        github: 'https://github.com/Snail-Lu/vue-douban',
+        url: "https://yes-i-do.cn/"
     },
     {
-        name: '实时聊天',
-        desc: '在线实时通讯聊天demo',
-        tags: ['CSS','CSS-animation','JavaScript'],
+        name: '仿Boss直聘移动端',
+        desc: '基于React+Antd实现的仿Boss直聘移动端项目',
+        tags: ['Boss直聘','React','Antd'],
         date: 'Jul 3, 2019',
-        component: 'RealTimeChat',
-        completed: false
+        github: 'https://github.com/Snail-Lu/employment-app',
+        url: "https://yes-i-do.cn/"
     },
     {
-        name: '仿windows桌面',
-        desc: 'windows桌面模仿，包含有有图标的拖拽、弹窗等',
-        tags: ['CSS','CSS-animation','JavaScript'],
+        name: '后台管理系统',
+        desc: '基于React+Antd实现的后台管理系统',
+        tags: ['React','Antd'],
         date: 'Jul 3, 2019',
-        component: 'WindowsDesktop',
-        completed: false
+        github: 'https://github.com/Snail-Lu/admin-client',
+        url: "https://yes-i-do.cn/"
     },
     {
-        name: '音乐播放器',
-        desc: '一个本地音乐播放的音乐播放器',
-        tags: ['Audio','CSS-animation','JavaScript'],
+        name: '服务端项目',
+        desc: '基于Express实现的服务端项目',
+        tags: ['Express', 'Node.js'],
         date: 'Jul 3, 2019',
-        component: 'audioplayer',
-        completed: true,
-        bugs: ['进度条无法拖拽','音量调节不太协调','歌词滚动播放不顺滑','碟片旋转在暂停播放时会回到原点']
+        github: 'https://github.com/Snail-Lu/employment-server',
+        url: "https://yes-i-do.cn/"
     },
-    {
-        name: 'TodoList',
-        desc: '学习react-redux时制作的一个todoList Demo',
-        tags: ['CSS','CSS-animation','JavaScript'],
-        date: 'Jul 3, 2019',
-        component: 'todolist',
-        completed: true
-    }
 ];

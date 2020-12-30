@@ -24,8 +24,8 @@ export default class Projects extends Component {
                                     <div className={styles.date}>{project.date}</div>
                                 </div>
                                 <div className={`${styles.box_r} flex-box-column flex-box-h-center flex-box-v-center flex-item-1`}>
-                                    <span className={styles.btn}>Github</span>
-                                    <span className={styles.btn}>在线预览</span>
+                                    <a className={styles.btn} href={project.github} target="_blank">Github</a>
+                                    <a className={styles.btn} href={project.url} target="_blank">在线预览</a>
                                 </div>
                             </div>
                         )
