@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import {
     BrowserRouter as Router,
     Switch,
@@ -39,7 +39,6 @@ const App = () => {
             </div>
         </Router>
     )
-    
 }
 
-export default App
+export default App;
