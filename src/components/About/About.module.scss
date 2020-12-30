@@ -9,17 +9,22 @@
     gap: 4% 2%;
 
     .about_item {
-        background-color: #fff;
         height: 25rem;
         line-height: 25rem;
         border-radius: 2%;
         text-align: center;
         font-size: 1.8rem;
-        &:nth-child(2), &:nth-child(3) {
-            background-color: #000;
-            a {
-                color: #fff;
-            }
+        &:nth-child(1) {
+            background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+        }
+        &:nth-child(2) {
+            background-image: linear-gradient(to top, #ebc0fd 0%, #d9ded8 100%);
+        }
+        &:nth-child(3) {
+            background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 100%);
+        }
+        &:nth-child(4) {
+            background-image: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%);
         }
     }
 }
