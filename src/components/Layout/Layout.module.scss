@@ -1,0 +1,11 @@
+.layoutContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #0099cc;
+    overflow: auto;
+
+    .content {
+        flex: 1;
+    }
+}
