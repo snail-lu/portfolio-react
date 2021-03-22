@@ -7,13 +7,13 @@ import { SHOW_NAV, HIDE_NAV } from '../../redux/actionTypes';
 
 const TopNav = ({ show, switchClick }) => {
   return (
-    <div className={styles.top_nav_container}>
+    <div className={styles.topNavContainer}>
       <div className={`${styles.menu_bar} ${show?styles.active:""}`} onClick={()=>switchClick(show?HIDE_NAV:SHOW_NAV)}>
         {
           show
           ?(<div className={styles.menu_list}>
               <NavLink to="/" exact className={styles.menu_item} activeClassName={styles.selected} onClick={e=>e.stopPropagation()}>HOME</NavLink>
-              <NavLink to="/project" className={styles.menu_item} activeClassName={styles.selected} onClick={e=>e.stopPropagation()}>PROJECT</NavLink>
+              <NavLink to="/projects" className={styles.menu_item} activeClassName={styles.selected} onClick={e=>e.stopPropagation()}>PROJECT</NavLink>
               <NavLink to="/demo" className={styles.menu_item} activeClassName={styles.selected} onClick={e=>e.stopPropagation()}>DEMO</NavLink>
               <NavLink to="/about" className={styles.menu_item} activeClassName={styles.selected} onClick={e=>e.stopPropagation()}>ABOUT</NavLink>
             </div>)
