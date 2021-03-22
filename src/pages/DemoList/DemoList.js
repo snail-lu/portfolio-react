@@ -5,11 +5,13 @@ import styles from './DemoList.module.scss';
 import { connect } from 'react-redux'
 import { requestDemoList } from '../../redux/actions'
 import { DemoType } from '../../redux/actionTypes';
+import Layout from '../../components/Layout/Layout';
 
 const DemoList = ({ getDemoList, list }) => {
         let { routerid } = useParams();
         getDemoList(routerid==='works'?DemoType.WORKS_DEMO:DemoType.WHIMS_DEMO);
         return (
+            <Layout>
             <div className={styles.demo_list_container}>
                 <div className={styles.demo_list}>
                     {
@@ -44,6 +46,7 @@ const DemoList = ({ getDemoList, list }) => {
                     }
                 </div>
             </div>
+            </Layout>
         )
     
 }
