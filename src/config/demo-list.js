@@ -24,5 +24,13 @@ export default [
         route: 'audioplayer',
         completed: true,
         bugs: ['进度条无法拖拽','音量调节不太协调','歌词滚动播放不顺滑','碟片旋转在暂停播放时会回到原点']
-    }
+    },
+    {
+        name: '贪吃蛇',
+        desc: '贪吃蛇游戏简化版',
+        tags: ['CSS-animation','JavaScript'],
+        date: 'Aug 3, 2020',
+        route: 'greedysnake',
+        completed: true,
+    },
 ];

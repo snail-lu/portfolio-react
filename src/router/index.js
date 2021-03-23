@@ -7,7 +7,7 @@ import Layout from '../components/Layout/Layout'
 import AudioPlayer from '../components/AudioPlayer/AudioPlayer';
 import DigitalClock from '../components/DigitalClock/DigitalClock';
 import PointerClock from '../components/PointerClock/PointerClock';
-import WindowsDesktop from '../components/WindowsDesktop/WindowsDesktop';
+import GreedySnake from '../components/GreedySnake/GreedySnake';
 import DemoLayout from '../components/DemoLayout/DemoLayout';
 
 const routeConfig = [
@@ -49,6 +49,12 @@ const routeConfig = [
                 path: '/demo/pointerclock',
                 render: () => {
                     return <DemoLayout title="指针时钟"><PointerClock /></DemoLayout>
+                }
+            },
+            { 
+                path: '/demo/greedysnake',
+                render: () => {
+                    return <DemoLayout title="贪吃蛇"><GreedySnake /></DemoLayout>
                 }
             },
         ],
