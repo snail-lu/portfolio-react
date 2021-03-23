@@ -1,16 +1,17 @@
 import React from 'react'
 import styles from './Layout.module.scss';
-import TopNav from '../../containers/TopNav/TopNav';
+import TopNav from '../TopNav/TopNav';
+import { renderRoutes } from 'react-router-config';
 
 export default function Layout(props) {
   const {
-    children,
+    route
   } = props;
 
   return (
     <div className={styles.layoutContainer}>
         <TopNav />
-        <main className={styles.content}>{ children }</main>
+        <main className={styles.content}>{ renderRoutes(route.routes) }</main>
     </div>
   )
 }
