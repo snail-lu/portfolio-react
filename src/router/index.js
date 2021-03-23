@@ -22,8 +22,8 @@ const routeConfig = [
         component: About,
     },
     { 
-      path: '/',
-      component: Home,
+        path: '/',
+        component: Home,
     }
 ]
 
