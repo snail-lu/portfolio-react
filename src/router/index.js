@@ -12,13 +12,18 @@ import DemoLayout from '../components/DemoLayout/DemoLayout';
 
 const routeConfig = [
     { 
-        path: '/projects',
-        component: Projects,
-    },
-    { 
-        path: '/demo',
+        path: '/',
         component: Layout,
         routes: [
+            {
+                path: '/',
+                exact: true,
+                component: Home,
+            },
+            { 
+                path: '/projects',
+                component: Projects,
+            },
             { 
                 path: '/demo',
                 exact: true,
@@ -48,15 +53,11 @@ const routeConfig = [
                     return <DemoLayout title="仿windows桌面"><WindowsDesktop /></DemoLayout>
                 }
             },
-        ]
-    },
-    { 
-        path: '/about',
-        component: About,
-    },
-    { 
-        path: '/',
-        component: Home,
+            { 
+                path: '/about',
+                component: About,
+            },
+        ],
     }
 ]
 
