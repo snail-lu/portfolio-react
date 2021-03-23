@@ -10,7 +10,7 @@ import routeConfig from './router/index'
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router basename="/portfolio">{renderRoutes(routeConfig)}</Router>
+    <Router basename="/portfolio">{ renderRoutes(routeConfig) }</Router>
   </Provider>,
   document.getElementById('root')
 );
