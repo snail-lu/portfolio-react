@@ -35,7 +35,7 @@ class PointerClock extends Component {
         let { hoursDeg, minutesDeg, secondsDeg } = this.state;
         let markArray = generatorArray(60);
         return (
-            <div className={styles.clock_container}>
+            <div className={styles.clockContainer}>
                 <div className={styles.clock_border}>
                     {
                         markArray.map((item)=>{
@@ -49,6 +49,7 @@ class PointerClock extends Component {
                     <div style={{ transform: "rotate("+hoursDeg+'deg'+")" }} className={styles.hour_hand}></div>
                     <div style={{ transform: "rotate("+minutesDeg+'deg'+")" }} className={styles.minute_hand}></div>
                     <div style={{ transform: "rotate("+secondsDeg+'deg'+")" }} className={styles.second_hand}></div>
+                    <div className={styles.pointerCenter}></div>
                 </div>
             </div>
         )

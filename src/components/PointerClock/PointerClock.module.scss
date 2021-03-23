@@ -1,14 +1,13 @@
-.clock_container{
+.clockContainer{
     display: flex;
     justify-content: center;
     margin-top: 5rem;
     
     .clock_border{
-        width: 18rem;
-        height: 18rem;
+        width: 25rem;
+        height: 25rem;
         border: 10px solid #000;
         border-radius: 50%;
-        // display: flex;
         position: relative;
 
         .clock_mark, .clock_mark_hightlight{
@@ -27,18 +26,6 @@
         .clock_mark::after{
             content: "";
             width: 2px;
-            height: 4px;
-            display: inline-block;
-            position: absolute;
-            top: 2px;
-            left: 50%;
-            margin-left: -1px;
-            background: #888;
-        }
-
-        .clock_mark_hightlight::after{
-            content: "";
-            width: 2px;
             height: 6px;
             display: inline-block;
             position: absolute;
@@ -46,6 +33,19 @@
             left: 50%;
             margin-left: -1px;
             background: #000;
+        }
+
+        .clock_mark_hightlight::after{
+            content: "";
+            width: 4px;
+            height: 12px;
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -2px;
+            background: #000;
+            border-radius: 1000px;
         }
         .clock_num{
             font-size: 2rem;
@@ -58,35 +58,56 @@
 
         .hour_hand{
             height: 25%;
-            width: 2px;
-            background: red;
-            position: absolute;
-            top: 30%;
-            left: 50%;
-            margin-left: -1px;
-            transform-origin: 50% 80%;
-        }
-        .minute_hand{
-            height: 35%;
-            width: 2px;
-            background: green;
-            position: absolute;
-            top: 20%;
-            left: 50%;
-            margin-left: -1px;
-            // transform: rotate(90deg);
-            transform-origin: 50% 85.7%;
-        }
-        .second_hand{
-            height: 45%;
-            width: 2px;
+            width: 6px;
             background: #000;
             position: absolute;
-            top: 10%;
+            top: 25%;
+            left: 50%;
+            margin-left: -3px;
+            transform-origin: 50% 100%;
+            border-radius: 1000px;
+        }
+        .minute_hand{
+            height: 45%;
+            width: 4px;
+            background: #000;
+            position: absolute;
+            top: 5%;
+            left: 50%;
+            margin-left: -2px;
+            // transform: rotate(90deg);
+            transform-origin: 50% 100%;
+            border-radius: 1000px;
+        }
+        .second_hand{
+            // height: 45%;
+            // width: 2px;
+            // background: #f2a534;
+            // position: absolute;
+            // top: 10%;
+            // left: 50%;
+            // margin-left: -1px;
+            // transform-origin: 50% 88.9%;
+            // border-radius: 1000px;
+            height: 50%;
+            width: 2px;
+            background: #f2a534;
+            position: absolute;
+            // top: 4px;
             left: 50%;
             margin-left: -1px;
-            // transform: rotate(135deg);
-            transform-origin: 50% 88.9%;
+            transform-origin: 50% 100%;
+            border-radius: 1000px;
+        }
+        .pointerCenter {
+            background-color: #f2a534;
+            width: 1.4rem;
+            height: 1.4rem;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
     }
 
