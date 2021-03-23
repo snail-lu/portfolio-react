@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { generatorArray } from '../../utils/index';
 import styles from './PointerClock.module.scss';
 
-class DigitalClock extends Component {
+class PointerClock extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -56,4 +56,4 @@ class DigitalClock extends Component {
 }
 
 
-export default DigitalClock;
+export default PointerClock;
