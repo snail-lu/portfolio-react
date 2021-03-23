@@ -23,44 +23,48 @@ portfolio
     │  └─ images
     │
     ├─ components           # 展示组件
-    │  ├─ App               # 根组件，主要的路由在这里配置
     │  │  
-    │  ├─ CopyRight         # CopyRight组件
+    │  ├─ Layout            # 页面布局组件
     │  │  
-    │  ├─ Home              # Home组件
+    │  ├─ DemoLayout        # Demo详情布局组件
+    │  │ 
+    │  ├─ AudioPlayer       # 音乐播放器
     │  │  
-    │  └─ TodoList          # TodoList的展示组件
-    │     
-    ├─ containers           # 容器组件
-    │  │ 
-    │  ├─ DemoDetail        # demo详情
-    │  │ 
-    │  ├─ DemoList          # demo列表
-    │  │ 
     │  ├─ DigitalClock      # 数字时钟
     │  │ 
     │  ├─ PointerClock      # 指针时钟
     │  │ 
-    │  ├─ TopNav            # 顶部导航
-    │  │
-    │  └─ TodoList          # TodoList的容器组件
+    │  ├─ WindowsDesktop    # 仿window桌面
+    │  │ 
+    │  └─ TopNav            # 顶部导航
+    │     
+    ├─ pages                # 页面
+    │  │ 
+    │  ├─ Home              # 首页 
+    │  │ 
+    │  ├─ About             # About页面
+    │  │ 
+    │  ├─ DemoDetail        # demo详情页
+    │  │ 
+    │  ├─ DemoList          # demo列表页
+    │  │ 
+    │  ├─ Projects          # 项目列表页
+    │  │ 
+    │  └─ ...              
     │
-    ├─ redux                 # redux目录
-    │  ├─ actions.js         # action creator
-    │  ├─ actionTypes.js     # action类型定义
-    │  ├─ reducers.js        # reducer
-    │  └─ store.js           # store
-    │ 
-    ├─ utils                 # 工具类
-    │  ├─ actions.js         # action creator
-    │  ├─ actionTypes.js     # action类型定义
-    │  ├─ reducers.js        # reducer
-    │  └─ store.js           # store
-    │ 
-    ├─ utils                 # 工具类
+    ├─ redux                # redux目录
+    │  ├─ actions.js          # action creator
+    │  ├─ actionTypes.js      # action类型定义
+    │  ├─ reducers.js         # reducer
+    │  └─ store.js            # store
+    │
+    ├─ router               # 路由集中配置
+    │  └─ index.js       
+    │
+    ├─ utils                # 工具类
     │  └─ index.js          
-    ├─ index.js              # 入口js文件
-    └─ index.scss            # 公用样式
+    ├─ index.js             # 入口js文件
+    └─ index.scss           # 公用样式
 
 ```
 
