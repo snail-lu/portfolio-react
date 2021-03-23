@@ -1,13 +1,13 @@
-import Snake from './Snake.ts';
-import Food from './Food.ts';
-import ScorePanle from './ScorePanel.ts';
+import Snake from './Snake';
+import Food from './Food';
+import ScorePanle from './ScorePanel';
 
 export default class GameControl {
-  snake: Snake;
-  food: Food;
-  scorePanel: ScorePanle;
-  direction: string = "";
-  gameOver: Boolean = false;
+  snake;
+  food;
+  scorePanel;
+  direction = "";
+  gameOver = false;
 
   constructor() {
     this.snake = new Snake();
@@ -24,7 +24,7 @@ export default class GameControl {
   }
 
   // 键盘按下事件处理函数
-  keydownHandler(event: KeyboardEvent) {
+  keydownHandler(event) {
     // 根据按下的按键来设置蛇的移动方向
     this.direction = event.key;
   }
@@ -72,7 +72,7 @@ export default class GameControl {
   }
 
   // 食物检测
-  checkFood(X:number, Y:number) {
+  checkFood(X, Y) {
     if(X===this.food.X && Y===this.food.Y) {
       // 增加分数
       this.scorePanel.addScore();

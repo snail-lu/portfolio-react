@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styles from './GreedySnake.module.scss';
-import GameControl from './GameControl.ts';
+import GameControl from './GameControl';
 
 class GreedySnake extends Component {
     constructor(props) {

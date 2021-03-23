@@ -2,18 +2,18 @@
 export default class ScorePanle {
     score = 0;
     level = 1;
-    scoreEle: HTMLElement;
-    levelEle: HTMLElement;
+    scoreEle;
+    levelEle;
   
     // 最高等级
-    maxLevel: number;
+    maxLevel;
   
     // 等级提升门槛
-    levelThreshold: number;
+    levelThreshold;
     
-    constructor(maxLevel: number = 10, levelThreshold: number = 2) {
-      this.scoreEle = document.getElementById('score')!;
-      this.levelEle = document.getElementById('level')!;
+    constructor(maxLevel = 10, levelThreshold = 2) {
+      this.scoreEle = document.getElementById('score');
+      this.levelEle = document.getElementById('level');
       this.maxLevel = maxLevel;
       this.levelThreshold = levelThreshold;
     }
