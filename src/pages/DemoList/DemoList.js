@@ -5,23 +5,21 @@ import styles from './DemoList.module.scss';
 import { connect } from 'react-redux'
 import { requestDemoList } from '../../redux/actions'
 import { DemoType } from '../../redux/actionTypes';
-import Layout from '../../components/Layout/Layout';
 
 const DemoList = ({ getDemoList, list }) => {
         let { routerid } = useParams();
         getDemoList(routerid==='works'?DemoType.WORKS_DEMO:DemoType.WHIMS_DEMO);
         return (
-            <Layout>
             <div className={styles.demo_list_container}>
                 <div className={styles.demo_list}>
                     {
                         list.map((item)=>{
                             return (
-                                <div className={styles.demo_item} key={item.component}>
+                                <div className={styles.demo_item} key={item.route}>
                                     <div className={styles.header}>
                                         {
                                             item.completed
-                                            ? <NavLink to={`/demo/${item.component}`} className={styles.view_btn}>预览</NavLink>
+                                            ? <NavLink to={`/demo/${item.route}`} className={styles.view_btn}>预览</NavLink>
                                             : <span className={styles.development}>开发中</span>
                                         }
                                     </div>
@@ -46,7 +44,6 @@ const DemoList = ({ getDemoList, list }) => {
                     }
                 </div>
             </div>
-            </Layout>
         )
     
 }
