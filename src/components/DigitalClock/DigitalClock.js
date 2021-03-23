@@ -49,7 +49,7 @@ class DigitalClock extends Component {
                                 {
                                     item.map(childItem => (
                                         <div
-                                            className={childItem==currentTime[index]?styles.current:styles.normal} 
+                                            className={childItem===currentTime[index]?styles.current:styles.normal} 
                                             key={childItem}
                                         >{childItem}</div>
                                     ))

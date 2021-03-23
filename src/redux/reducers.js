@@ -87,18 +87,18 @@ function visibilityFilter(state = SHOW_ALL, action) {
  * @param {*} state 
  * @param {*} action 
  */
-function weatherInfo(state={}, action) {
-  switch (action.type) {
-    case REQUEST_WEATHER_START:
-      return { status: LOADING }
-    case REQUEST_WEATHER_SUCCESS: 
-      return { status: SUCCESS, weather: action.weather }
-    case REQUEST_WEATHER_FAIL: 
-      return { status: FAIL, error: action.error }
-    default:
-      return state
-  }
-}
+// function weatherInfo(state={}, action) {
+//   switch (action.type) {
+//     case REQUEST_WEATHER_START:
+//       return { status: LOADING }
+//     case REQUEST_WEATHER_SUCCESS: 
+//       return { status: SUCCESS, weather: action.weather }
+//     case REQUEST_WEATHER_FAIL: 
+//       return { status: FAIL, error: action.error }
+//     default:
+//       return state
+//   }
+// }
 
 /**
  * 获取demo list

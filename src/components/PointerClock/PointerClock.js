@@ -41,7 +41,7 @@ class PointerClock extends Component {
                         markArray.map((item)=>{
                             return <div style={{transform: "rotate("+item*6+'deg'+")"}} className={`${item%5===0?styles.clock_mark_hightlight:styles.clock_mark}`}>
                                 {
-                                    item%5===0?<span className={styles.clock_num} style={{ transform: "rotate(" +(-item*6)+"deg"+")"}}>{item/5!=0?item/5:12}</span>:null
+                                    item%5===0?<span className={styles.clock_num} style={{ transform: "rotate(" +(-item*6)+"deg"+")"}}>{item/5!==0?item/5:12}</span>:null
                                 }
                             </div>
                         })

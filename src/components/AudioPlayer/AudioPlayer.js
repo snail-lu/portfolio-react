@@ -188,7 +188,7 @@ export default class AudioPlayer extends Component {
                         <div className={`${styles.disc}  ${styles.flex_center}`}>
                             <div className={`${styles.disc_outer} ${styles.flex_center}`}>
                                 <div className={styles.disc_inner}>
-                                    <img src={coverUrl} className={`${styles.cover_img} ${!paused?styles.cover_img_rotate:''}`}/>
+                                    <img src={coverUrl} className={`${styles.cover_img} ${!paused?styles.cover_img_rotate:''}`} alt="" />
                                 </div>
                             </div>
                         </div>

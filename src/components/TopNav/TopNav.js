@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { NavLink,useParams } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from './TopNav.module.scss';
 import { showNav } from '../../redux/actions';
 import { SHOW_NAV, HIDE_NAV } from '../../redux/actionTypes';
