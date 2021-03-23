@@ -25,6 +25,10 @@ const routeConfig = [
                 component: Projects,
             },
             { 
+                path: '/about',
+                component: About,
+            },
+            { 
                 path: '/demo',
                 exact: true,
                 component: DemoList,
@@ -38,24 +42,14 @@ const routeConfig = [
             { 
                 path: '/demo/digitalclock',
                 render: () => {
-                    return <DemoLayout title="动态数字时钟"><DigitalClock /></DemoLayout>
+                    return <DemoLayout title="数字时钟"><DigitalClock /></DemoLayout>
                 }
             },
             { 
                 path: '/demo/pointerclock',
                 render: () => {
-                    return <DemoLayout title="动态指针时钟"><PointerClock /></DemoLayout>
+                    return <DemoLayout title="指针时钟"><PointerClock /></DemoLayout>
                 }
-            },
-            { 
-                path: '/demo/windowsdesktop',
-                render: () => {
-                    return <DemoLayout title="仿windows桌面"><WindowsDesktop /></DemoLayout>
-                }
-            },
-            { 
-                path: '/about',
-                component: About,
             },
         ],
     }
