@@ -19,6 +19,7 @@
         display: flex;
         height: 0;
         background: #fff;
+        overflow-y: hidden;
         .disc{
             flex: 1;
             .disc_outer{
@@ -48,9 +49,14 @@
             flex: 1;
             text-align: center;
             position: relative;
-            overflow: hidden;
+            // overflow: hidden;
             .lyric_text{
-                position: absolute;
+                color: #999;
+                // position: absolute;
+                &_current {
+                    color: #000;
+                    font-size: 1.8rem;
+                }
             }
         }
     }
