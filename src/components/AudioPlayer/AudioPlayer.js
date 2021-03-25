@@ -12,6 +12,7 @@ export default class AudioPlayer extends Component {
             playedTime: "00:00",      // 已播放时间 
             duration: 0,              // 音乐总时长（未转换）
             totalTime: "00:00",
+            lyricPosition: '0',
             lyricArray: [
                 {
                   t: 0,
@@ -150,7 +151,7 @@ export default class AudioPlayer extends Component {
                     c: '请你少买冰淇淋'
                 },
                 {
-                    t: 0,
+                    t: 139,
                     c: '天凉就别穿短裙'
                 },
                 {
@@ -276,9 +277,21 @@ export default class AudioPlayer extends Component {
         currentTime_s = currentTime_s>=10?currentTime_s:"0"+ currentTime_s;
 
         const lyricHeight = this.lyricDom.clientHeight;
-        console.log(lyricHeight)
+        
+        let { currentLine, lyricPosition } = this.state;
+        this.state.lyricArray.forEach((lyricItem, lyricIndex) => {
+            let currentSecond = Math.floor(currentTime);
+            if(currentSecond == lyricItem.t) {
+                currentLine = lyricIndex;
+                if(currentLine*lyricHeight>=150) {
+                    lyricPosition = -(currentLine*lyricHeight - 150)+'px';
+                }
+            }
+        });
+
         this.setState({
-            lyricPosition: -Math.floor(lyricHeight*currentTime)+'px',
+            currentLine,
+            lyricPosition,
             currentTime,
             playedTime: currentTime_m + ":" + currentTime_s
         })
@@ -286,11 +299,14 @@ export default class AudioPlayer extends Component {
 
     // 结束时
     onEnd = () => {
-        console.log('播放结束了')
+        this.setState({
+            currentLine: 0,
+            lyricPosition : '0'
+        })
     }
 
     render() {
-        let { paused, playedTime, totalTime, currentTime, duration, lyricPosition, lyricArray } = this.state;
+        let { paused, playedTime, totalTime, currentTime, duration, lyricPosition, lyricArray, currentLine } = this.state;
         return (
                 <div className={styles.music_container}>
                     <div className={styles.header}>音乐播放器</div>
@@ -304,10 +320,10 @@ export default class AudioPlayer extends Component {
                         </div>
                         <div className={styles.lyric} style={{marginTop: lyricPosition}}>
                             {
-                                lyricArray.map(lyric=>{
+                                lyricArray.map((lyric, lyricIndex)=>{
                                     return (
                                         <p 
-                                          className={`${styles.lyric_text} ${currentTime.toFixed()==lyric.t?styles.lyric_text_current:''}`}
+                                          className={`${styles.lyric_text} ${currentLine==lyricIndex?styles.lyric_text_current:''}`}
                                           ref={(lyricDom) => { this.lyricDom = lyricDom  }}
                                         >{lyric.c}</p>
                                     )
