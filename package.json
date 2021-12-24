@@ -1,8 +1,8 @@
 {
-  "name": "portfolio",
-  "version": "0.1.0",
+  "name": "portfolio-react",
+  "version": "1.0.0",
   "private": true,
-  "homepage": "https://yes-i-do.cn/portfolio",
+  "homepage": "https://snail-lu.github.io/portfolio-react",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -28,6 +28,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
