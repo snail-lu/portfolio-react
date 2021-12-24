@@ -1,8 +1,8 @@
-### React Portfolio
+# React Portfolio
 
 主要用于记录平时使用 `React` 开发的工作学习经验，以及一些 DEMO 的实现。[线上地址](https://snail-lu.github.io/portfolio-react/)
 
-#### 功能
+## 功能
 
 - DEMO
   - 指针时钟
@@ -10,7 +10,7 @@
   - 音乐播放器
   - 贪吃蛇
 
-#### 目录结构
+## 目录结构
 
 ```
 portfolio-react
