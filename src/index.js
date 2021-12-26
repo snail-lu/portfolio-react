@@ -4,7 +4,7 @@ import './index.scss'
 import './assets/iconfont/iconfont.css'
 import { Provider } from 'react-redux'
 import store from './redux/store'
-import { BrowserRouter as Router } from 'react-router-dom'
+import { HashRouter as Router } from 'react-router-dom'
 import { renderRoutes } from 'react-router-config'
 import routeConfig from './router/index'
 
