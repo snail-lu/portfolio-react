@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/portfolio-react/static/css/main.97510e86.chunk.css",
-    "main.js": "/portfolio-react/static/js/main.89667272.chunk.js",
-    "main.js.map": "/portfolio-react/static/js/main.89667272.chunk.js.map",
+    "main.css": "/portfolio-react/static/css/main.be2bcbaf.chunk.css",
+    "main.js": "/portfolio-react/static/js/main.ef2c3dff.chunk.js",
+    "main.js.map": "/portfolio-react/static/js/main.ef2c3dff.chunk.js.map",
     "runtime-main.js": "/portfolio-react/static/js/runtime-main.a4de92d3.js",
     "runtime-main.js.map": "/portfolio-react/static/js/runtime-main.a4de92d3.js.map",
-    "static/js/2.25446b38.chunk.js": "/portfolio-react/static/js/2.25446b38.chunk.js",
-    "static/js/2.25446b38.chunk.js.map": "/portfolio-react/static/js/2.25446b38.chunk.js.map",
+    "static/js/2.7f9e368e.chunk.js": "/portfolio-react/static/js/2.7f9e368e.chunk.js",
+    "static/js/2.7f9e368e.chunk.js.map": "/portfolio-react/static/js/2.7f9e368e.chunk.js.map",
     "index.html": "/portfolio-react/index.html",
-    "precache-manifest.cd1eaa2373d96ab7289b956e33d29c0a.js": "/portfolio-react/precache-manifest.cd1eaa2373d96ab7289b956e33d29c0a.js",
+    "precache-manifest.1983f435c7d99fe9a7ba41a49b71040c.js": "/portfolio-react/precache-manifest.1983f435c7d99fe9a7ba41a49b71040c.js",
     "service-worker.js": "/portfolio-react/service-worker.js",
-    "static/css/main.97510e86.chunk.css.map": "/portfolio-react/static/css/main.97510e86.chunk.css.map",
-    "static/js/2.25446b38.chunk.js.LICENSE.txt": "/portfolio-react/static/js/2.25446b38.chunk.js.LICENSE.txt",
+    "static/css/main.be2bcbaf.chunk.css.map": "/portfolio-react/static/css/main.be2bcbaf.chunk.css.map",
+    "static/js/2.7f9e368e.chunk.js.LICENSE.txt": "/portfolio-react/static/js/2.7f9e368e.chunk.js.LICENSE.txt",
     "static/media/avatar.jpg": "/portfolio-react/static/media/avatar.50a374e0.jpg",
     "static/media/iconfont.css": "/portfolio-react/static/media/iconfont.bde7f4d5.ttf",
     "static/media/music_cover.jpg": "/portfolio-react/static/media/music_cover.d8a4ea26.jpg",
@@ -19,8 +19,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.a4de92d3.js",
-    "static/js/2.25446b38.chunk.js",
-    "static/css/main.97510e86.chunk.css",
-    "static/js/main.89667272.chunk.js"
+    "static/js/2.7f9e368e.chunk.js",
+    "static/css/main.be2bcbaf.chunk.css",
+    "static/js/main.ef2c3dff.chunk.js"
   ]
 }
