@@ -1,70 +1,101 @@
-# Getting Started with Create React App
+# React Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+主要用于记录平时使用 `React` 开发的工作学习经验，以及一些 DEMO 的实现。[线上地址](https://snail-lu.github.io/portfolio-react/)
 
-## Available Scripts
+## 功能
 
-In the project directory, you can run:
+- DEMO
+  - 指针时钟
+  - 数字时钟
+  - 音乐播放器
+  - 贪吃蛇
 
-### `npm start`
+## 目录结构
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+portfolio-react
+├── README.md               # 说明文档
+├── package.json
+├── .gitignore
+├── public                  # 静态资源
+│   ├── favicon.ico
+│   ├── index.html          # html模板
+│   ├── manifest.json
+│   └── robots.txt
+└── src
+    ├─ assets               # 静态资源
+    │  └─ images
+    │
+    ├─ components           # 展示组件
+    │  │
+    │  ├─ Layout            # 页面布局组件
+    │  │
+    │  ├─ DemoLayout        # Demo详情布局组件
+    │  │
+    │  ├─ AudioPlayer       # 音乐播放器
+    │  │
+    │  ├─ DigitalClock      # 数字时钟
+    │  │
+    │  ├─ PointerClock      # 指针时钟
+    │  │
+    │  ├─ WindowsDesktop    # 仿window桌面
+    │  │
+    │  └─ TopNav            # 顶部导航
+    │
+    ├─ pages                # 页面
+    │  │
+    │  ├─ Home              # 首页
+    │  │
+    │  ├─ About             # About页面
+    │  │
+    │  ├─ DemoDetail        # demo详情页
+    │  │
+    │  ├─ DemoList          # demo列表页
+    │  │
+    │  ├─ Projects          # 项目列表页
+    │  │
+    │  └─ ...
+    │
+    ├─ redux                # redux目录
+    │  ├─ actions.js          # action creator
+    │  ├─ actionTypes.js      # action类型定义
+    │  ├─ reducers.js         # reducer
+    │  └─ store.js            # store
+    │
+    ├─ router               # 路由集中配置
+    │  └─ index.js
+    │
+    ├─ utils                # 工具类
+    │  └─ index.js
+    ├─ index.js             # 入口js文件
+    └─ index.scss           # 公用样式
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
 
-### `npm test`
+## 基本使用
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+// 克隆代码
+git clone git@github.com:Snail-Lu/portfolio-react.git
 
-### `npm run build`
+// 安装依赖
+cd portfolio-react
+npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+// 本地运行
+npm start
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+// 生产打包
+npm run build
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+// 部署到 github pages
+npm run deploy
+```
 
-### `npm run eject`
+## 相关参考文档
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Create React App 文档 [中文](https://www.html.cn/create-react-app/docs/getting-started/) | [英文](https://create-react-app.dev/docs/getting-started)
+- React 文档 [中文](https://react.docschina.org/docs/getting-started.html) | [英文](https://reactjs.org/docs/getting-started.html)
+- React-router [中文(非最新版本)](http://react-guide.github.io/react-router-cn/index.html) | [英文](https://reacttraining.com/react-router/web/guides/quick-start)
+- Redux [中文](http://cn.redux.js.org) | [英文](https://redux.js.org/introduction/getting-started)
+- axios [中文](http://www.axios-js.com/zh-cn/docs/) | [英文](https://github.com/axios/axios)

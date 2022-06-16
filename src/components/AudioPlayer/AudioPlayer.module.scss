@@ -1,0 +1,162 @@
+.music_container {
+	width: 480px;
+	height: 420px;
+	margin: 50px auto 0;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    .header {
+        height: 30px;
+        background-color: #D33A31;
+        color: #fff;
+        line-height: 30px;
+        text-align: center;
+        font-size: 16px;
+    }
+    .content {
+        flex: 1;
+        display: flex;
+        height: 0;
+        background: #fff;
+        overflow-y: hidden;
+        .disc{
+            flex: 1;
+            .disc_outer{
+                background: #333;
+                border: 8px solid #eee;
+                width: 180px;
+                height: 180px;
+                border-radius: 50%;
+            }
+            .disc_inner{
+                border: 4px solid #111;
+                width: 100px;
+                height: 100px;
+                background: #fff;
+                border-radius: 50%;
+                overflow: hidden;
+            }
+            .cover_img{
+                width: 100%;
+                height: 100%;
+            }
+            .cover_img_rotate{
+                animation: rotate 10s linear infinite;
+            }
+        }
+        .lyric{
+            flex: 1;
+            text-align: center;
+            position: relative;
+            // overflow: hidden;
+            .lyric_text{
+                color: #999;
+                // position: absolute;
+                &_current {
+                    color: #000;
+                    font-size: 1.8rem;
+                }
+            }
+        }
+    }
+    .footer {
+        height: 90px;
+        background-color: #fff;
+        border-top: 1px solid #eee;
+        font-size: 13px;
+        .music_info {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 20px;
+        }
+        .progress {
+            margin: 0 20px;
+            height: 6px;
+            background-color: #eee;
+            border-radius: 3px;
+            .currentPro{
+                height: 6px;
+                width: 0;
+                background-color: #D33A31;
+                border-radius: 3px;
+            } 
+        }
+        .controls {
+            position: relative;
+            .switch {
+                font-size:45px;
+                line-height:50px;
+                text-align:center;
+                cursor:pointer;
+                margin: 0 30px;
+                color: #D33A31;
+            }
+            .prev{
+                font-size:20px;
+                line-height:35px;
+                text-align:center;
+                cursor:pointer;
+                color: #D33A31;
+
+            }
+            .next{
+                font-size:20px;
+                line-height:35px;
+                text-align:center;
+                cursor:pointer;
+                color: #D33A31;
+
+            }
+            .volume{
+                position: absolute;
+                height: 30px;
+                right: 20px;
+                top: 50%;
+                margin-top: -15px;
+                /* background-color:red; */
+            }
+            .volume {
+                display: flex;
+                justify-content: space-between;
+                color: #D33A31;
+                .volume_icon{
+                    height:30px;
+                    line-height:30px;
+                    width:30px;
+                    font-size:20px;
+                    cursor:pointer;
+                }
+                .volume_range{
+                    width: 80px;
+                }
+            }
+        }
+    }
+
+    .flex_center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+@keyframes move{
+	0%{
+		transform: translate(0px);
+	}
+	100%{
+		transform: translate(-2400px);
+	}
+}
+
+@keyframes rotate{
+    from{
+        transform: rotate(0deg)
+    }
+    to{
+        transform: rotate(360deg)
+    }
+}
+
