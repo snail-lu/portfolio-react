@@ -15,7 +15,7 @@ import {
     SHOW_NAV,
     HIDE_NAV
   } from './actionTypes';
-  import demoData from '../config/demo-list';
+import demoData from '../config/demo-list';
 
 const { SHOW_ALL } = VisibilityFilters;
 
@@ -103,7 +103,8 @@ function weatherInfo(state={}, action) {
 /**
  * 获取demo list
  */
-function demoList(state=[], action) {
+function demoList(state = [], action) {
+  console.log(action,'action')
   switch (action.type){
     case REQUEST_DEMO_LIST:
       return demoData;
