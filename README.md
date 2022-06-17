@@ -1,14 +1,23 @@
-# React Portfolio
+<h2 align="center">React Portfolio</h2>
+<p align="center">
+    <a href="https://portfolio-react-snail.vercel.app" target="_blank">线上地址</a>
+    ·
+    <a href="https://github.com/Snail-Lu/portfolio-react" target="_blank">仓库地址</a>
+    ·
+    <a href="https://github.com/Snail-Lu/portfolio-react/issues" target="_blank">建议意见</a>
+</p>
 
-主要用于记录平时使用 `React` 开发的工作学习经验，以及一些 DEMO 的实现。[线上地址](https://snail-lu.github.io/portfolio-react/)
+## 简介
+
+基于 `React 18` 搭建的项目集，项目中多为平时开发遇到的需求或有趣的 demo。
 
 ## 功能
 
-- DEMO
-  - 指针时钟
-  - 数字时钟
-  - 音乐播放器
-  - 贪吃蛇
+-   DEMO
+    -   指针时钟
+    -   数字时钟
+    -   音乐播放器
+    -   贪吃蛇
 
 ## 目录结构
 
@@ -76,7 +85,7 @@ portfolio-react
 
 ```bash
 // 克隆代码
-git clone git@github.com:Snail-Lu/portfolio-react.git
+git clone https://github.com/Snail-Lu/portfolio-react.git
 
 // 安装依赖
 cd portfolio-react
@@ -94,8 +103,8 @@ npm run deploy
 
 ## 相关参考文档
 
-- Create React App 文档 [中文](https://www.html.cn/create-react-app/docs/getting-started/) | [英文](https://create-react-app.dev/docs/getting-started)
-- React 文档 [中文](https://react.docschina.org/docs/getting-started.html) | [英文](https://reactjs.org/docs/getting-started.html)
-- React-router [中文(非最新版本)](http://react-guide.github.io/react-router-cn/index.html) | [英文](https://reacttraining.com/react-router/web/guides/quick-start)
-- Redux [中文](http://cn.redux.js.org) | [英文](https://redux.js.org/introduction/getting-started)
-- axios [中文](http://www.axios-js.com/zh-cn/docs/) | [英文](https://github.com/axios/axios)
+-   Create React App 文档 [中文](https://www.html.cn/create-react-app/docs/getting-started/) | [英文](https://create-react-app.dev/docs/getting-started)
+-   React 文档 [中文](https://react.docschina.org/docs/getting-started.html) | [英文](https://reactjs.org/docs/getting-started.html)
+-   React-router [中文(非最新版本)](http://react-guide.github.io/react-router-cn/index.html) | [英文](https://reacttraining.com/react-router/web/guides/quick-start)
+-   Redux [中文](http://cn.redux.js.org) | [英文](https://redux.js.org/introduction/getting-started)
+-   axios [中文](http://www.axios-js.com/zh-cn/docs/) | [英文](https://github.com/axios/axios)
