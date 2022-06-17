@@ -75,8 +75,8 @@ function requestWeatherFail(error) {
 }
 
 //  获取DEMO_LIST
-export function requestDemoList(demoType) {
-    return { type: REQUEST_DEMO_LIST, demoType }
+export function requestDemoList() {
+    return { type: REQUEST_DEMO_LIST }
 }
 
 /**

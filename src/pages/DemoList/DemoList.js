@@ -1,15 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { useParams, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import styles from './DemoList.module.scss'
 import { connect } from 'react-redux'
 import { requestDemoList } from '../../redux/actions'
-import { DemoType } from '../../redux/actionTypes'
 
 const DemoList = ({ getDemoList, list }) => {
-    let { routerid } = useParams()
-    console.log(routerid, 'routerid')
-    getDemoList(routerid === 'works' ? DemoType.WORKS_DEMO : DemoType.WHIMS_DEMO)
+    getDemoList()
     return (
         <div className={styles.demo_list_container}>
             <div className={styles.demo_list}>
@@ -56,9 +53,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         getDemoList: (type) => {
-            const res = requestDemoList(type)
-            console.log(res, 'res')
-            dispatch(res)
+            dispatch(requestDemoList())
         }
     }
 }

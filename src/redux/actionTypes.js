@@ -27,10 +27,6 @@ export const VisibilityFilters = {
     SHOW_ACTIVE: 'SHOW_ACTIVE'
 }
 
-export const DemoType = {
-    WORKS_DEMO: 'works',
-    WHIMS_DEMO: 'whims'
-}
 export const LOADING = 'LOADING'
 export const SUCCESS = 'SUCCESS'
 export const FAIL = 'FAIL'
