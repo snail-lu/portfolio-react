@@ -11,81 +11,81 @@ const GreedySnake = React.lazy(() => import('../components/GreedySnake/GreedySna
 const DemoLayout = React.lazy(() => import('../components/DemoLayout/DemoLayout'))
 
 const routeConfig = [
-  {
-    path: '/',
-    element: <Layout />,
-    children: [
-      {
-        index: true,
-        element: <Home />
-      },
-      {
-        path: '/projects',
-        element: (
-          <React.Suspense fallback={<>...</>}>
-            <Projects />
-          </React.Suspense>
-        )
-      },
-      {
-        path: '/about',
-        element: (
-          <React.Suspense fallback={<>...</>}>
-            <About />
-          </React.Suspense>
-        )
-      },
-      {
-        path: '/demo',
-        // exact: true,
-        element: (
-          <React.Suspense fallback={<>...</>}>
-            <DemoList />
-          </React.Suspense>
-        )
-      },
-      {
-        path: '/demo/audioplayer',
-        element: (
-          <React.Suspense fallback={<>...</>}>
-            <DemoLayout title="音乐播放器">
-              <AudioPlayer />
-            </DemoLayout>
-          </React.Suspense>
-        )
-      },
-      {
-        path: '/demo/digitalclock',
-        element: (
-          <React.Suspense fallback={<>...</>}>
-            <DemoLayout title="数字时钟">
-              <DigitalClock />
-            </DemoLayout>
-          </React.Suspense>
-        )
-      },
-      {
-        path: '/demo/pointerclock',
-        element: (
-          <React.Suspense fallback={<>...</>}>
-            <DemoLayout title="指针时钟">
-              <PointerClock />
-            </DemoLayout>
-          </React.Suspense>
-        )
-      },
-      {
-        path: '/demo/greedysnake',
-        element: (
-          <React.Suspense fallback={<>...</>}>
-            <DemoLayout title="贪吃蛇">
-              <GreedySnake />
-            </DemoLayout>
-          </React.Suspense>
-        )
-      }
-    ]
-  }
+    {
+        path: '/',
+        element: <Layout />,
+        children: [
+            {
+                index: true,
+                element: <Home />
+            },
+            {
+                path: '/projects',
+                element: (
+                    <React.Suspense fallback={<>...</>}>
+                        <Projects />
+                    </React.Suspense>
+                )
+            },
+            {
+                path: '/about',
+                element: (
+                    <React.Suspense fallback={<>...</>}>
+                        <About />
+                    </React.Suspense>
+                )
+            },
+            {
+                path: '/demo',
+                // exact: true,
+                element: (
+                    <React.Suspense fallback={<>...</>}>
+                        <DemoList />
+                    </React.Suspense>
+                )
+            },
+            {
+                path: '/demo/audioplayer',
+                element: (
+                    <React.Suspense fallback={<>...</>}>
+                        <DemoLayout title="音乐播放器">
+                            <AudioPlayer />
+                        </DemoLayout>
+                    </React.Suspense>
+                )
+            },
+            {
+                path: '/demo/digitalclock',
+                element: (
+                    <React.Suspense fallback={<>...</>}>
+                        <DemoLayout title="数字时钟">
+                            <DigitalClock />
+                        </DemoLayout>
+                    </React.Suspense>
+                )
+            },
+            {
+                path: '/demo/pointerclock',
+                element: (
+                    <React.Suspense fallback={<>...</>}>
+                        <DemoLayout title="指针时钟">
+                            <PointerClock />
+                        </DemoLayout>
+                    </React.Suspense>
+                )
+            },
+            {
+                path: '/demo/greedysnake',
+                element: (
+                    <React.Suspense fallback={<>...</>}>
+                        <DemoLayout title="贪吃蛇">
+                            <GreedySnake />
+                        </DemoLayout>
+                    </React.Suspense>
+                )
+            }
+        ]
+    }
 ]
 
 export default routeConfig
