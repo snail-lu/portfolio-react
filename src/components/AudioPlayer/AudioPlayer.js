@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Slider } from 'antd'
 import styles from './AudioPlayer.module.scss'
 import audioUrl from '../../assets/music/有何不可.mp3'
 import coverUrl from '../../assets/images/music_cover.jpg'
@@ -11,8 +12,8 @@ export default class AudioPlayer extends Component {
             currentTime: 0, // 已播放时间（未转换）
             playedTime: '00:00', // 已播放时间
             duration: 0, // 音乐总时长（未转换）
-            totalTime: '00:00',
-            lyricPosition: '0',
+            totalTime: '00:00', // 音乐总时长（已转换）
+            lyricPosition: '0', // 歌词位置
             lyricArray: [
                 {
                     t: 0,
@@ -27,11 +28,11 @@ export default class AudioPlayer extends Component {
                     c: '演唱：许嵩'
                 },
                 {
-                    t: 21,
+                    t: 20,
                     c: '天空好想下雨'
                 },
                 {
-                    t: 25,
+                    t: 24,
                     c: '我好想住你隔壁'
                 },
                 {
@@ -47,7 +48,7 @@ export default class AudioPlayer extends Component {
                     c: '如果场景里出现一架钢琴'
                 },
                 {
-                    t: 33,
+                    t: 34,
                     c: '我会唱歌给你听'
                 },
                 {
@@ -75,11 +76,11 @@ export default class AudioPlayer extends Component {
                     c: '如果有时不那么开心'
                 },
                 {
-                    t: 52,
+                    t: 53,
                     c: '我愿意将格洛米借给你'
                 },
                 {
-                    t: 54,
+                    t: 55,
                     c: '你其实明白我心意'
                 },
                 {
@@ -127,7 +128,7 @@ export default class AudioPlayer extends Component {
                     c: '傻站在你家楼下'
                 },
                 {
-                    t: 125,
+                    t: 124,
                     c: '抬起头 数乌云'
                 },
                 {
@@ -135,11 +136,11 @@ export default class AudioPlayer extends Component {
                     c: '如果场景里出现一架钢琴'
                 },
                 {
-                    t: 128,
+                    t: 129,
                     c: '我会唱歌给你听'
                 },
                 {
-                    t: 132,
+                    t: 131,
                     c: '哪怕好多盆水往下淋'
                 },
                 {
@@ -147,23 +148,23 @@ export default class AudioPlayer extends Component {
                     c: '夏天快要过去'
                 },
                 {
-                    t: 137,
+                    t: 139,
                     c: '请你少买冰淇淋'
                 },
                 {
-                    t: 139,
+                    t: 141,
                     c: '天凉就别穿短裙'
                 },
                 {
-                    t: 141,
+                    t: 143,
                     c: '别再那么淘气'
                 },
                 {
-                    t: 145,
+                    t: 146,
                     c: '如果有时不那么开心'
                 },
                 {
-                    t: 147,
+                    t: 148,
                     c: '我愿意将格洛米借给你'
                 },
                 {
@@ -175,7 +176,7 @@ export default class AudioPlayer extends Component {
                     c: '为你唱这首歌 没有什么风格'
                 },
                 {
-                    t: 157,
+                    t: 158,
                     c: '它仅仅代表着 我想给你快乐'
                 },
                 {
@@ -187,7 +188,7 @@ export default class AudioPlayer extends Component {
                     c: '没有什么事情是不值得'
                 },
                 {
-                    t: 171,
+                    t: 172,
                     c: '为你唱这首歌 没有什么风格'
                 },
                 {
@@ -211,7 +212,7 @@ export default class AudioPlayer extends Component {
                     c: '没有什么事情是不值得'
                 },
                 {
-                    t: 210,
+                    t: 212,
                     c: '为你唱这首歌 没有什么风格'
                 },
                 {
@@ -223,10 +224,11 @@ export default class AudioPlayer extends Component {
                     c: '为你辗转反侧 为你放弃世界有何不可'
                 },
                 {
-                    t: 225,
+                    t: 226,
                     c: '夏末秋凉里带一点温热 有换季的颜色'
                 }
-            ]
+            ],
+            volumeControlsVisible: false // 显示音量调节器
         }
     }
 
@@ -245,14 +247,28 @@ export default class AudioPlayer extends Component {
     }
 
     // 音量调节
-    adjustVolume = (event) => {
+    adjustVolume = (value) => {
         let audio = this.audio
-        audio.volume = event.target.value
+        audio.volume = value
+    }
+
+    // 调节进度
+    adjustProgress = (value) => {
+        let audio = this.audio
+        audio.currentTime = value
+    }
+
+    // 显示/隐藏音量调节框
+    changeVolumeControlsVisible = () => {
+        const { volumeControlsVisible } = this.state
+        this.setState({
+            volumeControlsVisible: !volumeControlsVisible
+        })
     }
 
     // canPlay监听
     canPlay = () => {
-        let duration = this.audio.duration
+        let duration = Math.round(this.audio.duration)
         let duration_m = Math.floor(duration / 60)
         let duration_s = Math.floor(duration % 60)
 
@@ -267,7 +283,7 @@ export default class AudioPlayer extends Component {
 
     // timeUpdate监听，更新播放时长与进度条
     timeUpdate = () => {
-        let currentTime = this.audio.currentTime
+        let currentTime = Math.round(this.audio.currentTime)
         let currentTime_m = Math.floor(currentTime / 60)
         let currentTime_s = Math.floor(currentTime % 60)
 
@@ -277,9 +293,10 @@ export default class AudioPlayer extends Component {
         const lyricHeight = this.lyricDom.clientHeight
 
         let { currentLine, lyricPosition } = this.state
+        // 歌词位置移动
         this.state.lyricArray.forEach((lyricItem, lyricIndex) => {
             let currentSecond = Math.floor(currentTime)
-            if (currentSecond == lyricItem.t) {
+            if (currentSecond === lyricItem.t) {
                 currentLine = lyricIndex
                 if (currentLine * lyricHeight >= 150) {
                     lyricPosition = -(currentLine * lyricHeight - 150) + 'px'
@@ -304,8 +321,17 @@ export default class AudioPlayer extends Component {
     }
 
     render() {
-        let { paused, playedTime, totalTime, currentTime, duration, lyricPosition, lyricArray, currentLine } =
-            this.state
+        let {
+            paused,
+            playedTime,
+            totalTime,
+            duration,
+            lyricPosition,
+            lyricArray,
+            currentLine,
+            volumeControlsVisible,
+            currentTime
+        } = this.state
         return (
             <div className={styles.music_container}>
                 <div className={styles.header}>音乐播放器</div>
@@ -321,6 +347,7 @@ export default class AudioPlayer extends Component {
                             </div>
                         </div>
                     </div>
+                    {/* 歌词 */}
                     <div className={styles.lyric} style={{ marginTop: lyricPosition }}>
                         {lyricArray.map((lyric, lyricIndex) => {
                             return (
@@ -357,10 +384,14 @@ export default class AudioPlayer extends Component {
 
                     {/* 播放进度 */}
                     <div className={styles.progress}>
-                        <div
-                            className={styles.currentPro}
-                            style={{ width: (currentTime * 100) / duration + '%' }}
-                        ></div>
+                        <Slider
+                            defaultValue={0}
+                            min={0}
+                            max={duration}
+                            tooltipVisible={false}
+                            onChange={this.adjustProgress}
+                            value={currentTime}
+                        />
                     </div>
 
                     {/* 播放控制 */}
@@ -372,17 +403,24 @@ export default class AudioPlayer extends Component {
                         ></span>
                         <span className={styles.next + ' iconfont icon-xiayishou'} title="next"></span>
 
-                        {/* 音量增减 */}
+                        {/* 音量调节 */}
                         <div className={styles.volume}>
-                            <span className={`${styles.volume_icon} iconfont icon-danseshixintubiao-`}></span>
-                            <input
-                                type="range"
-                                className={styles.volume_range}
-                                max="1"
-                                min="0"
-                                step="0.1"
-                                onChange={this.adjustVolume}
-                            />
+                            <span
+                                className={`${styles.volume_icon} iconfont icon-danseshixintubiao-`}
+                                onClick={this.changeVolumeControlsVisible}
+                            ></span>
+                            {volumeControlsVisible && (
+                                <div className={styles.volume_controls}>
+                                    <Slider
+                                        defaultValue={0.2}
+                                        max={1}
+                                        vertical
+                                        step={0.1}
+                                        tooltipVisible={false}
+                                        onChange={this.adjustVolume}
+                                    />
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>
