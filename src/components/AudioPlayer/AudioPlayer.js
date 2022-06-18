@@ -336,12 +336,15 @@ export default class AudioPlayer extends Component {
             <div className={styles.music_container}>
                 <div className={styles.header}>音乐播放器</div>
                 <div className={styles.content}>
+                    {/* CD机 */}
                     <div className={`${styles.disc}  ${styles.flex_center}`}>
                         <div className={`${styles.disc_outer} ${styles.flex_center}`}>
                             <div className={styles.disc_inner}>
                                 <img
                                     src={coverUrl}
-                                    className={`${styles.cover_img} ${!paused ? styles.cover_img_rotate : ''}`}
+                                    className={`${styles.cover_img_rotate} ${
+                                        paused ? styles.cover_img_rotate_paused : ''
+                                    }`}
                                     alt=""
                                 />
                             </div>

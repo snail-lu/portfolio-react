@@ -37,12 +37,15 @@
                 border-radius: 50%;
                 overflow: hidden;
             }
-            .cover_img {
+            .cover_img_rotate {
                 width: 100%;
                 height: 100%;
-            }
-            .cover_img_rotate {
                 animation: rotate 10s linear infinite;
+                animation-play-state: running;
+
+                &_paused {
+                    animation-play-state: paused;
+                }
             }
         }
         .lyric {
