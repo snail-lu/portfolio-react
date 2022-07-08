@@ -7,7 +7,7 @@ const TopNav = () => {
     return (
         <div className={styles.topNavContainer}>
             <div className="flex-box flex-box-v-center">
-                <img src={logoUrl} className={styles.logo} />
+                <img src={logoUrl} className={styles.logo} alt="logo" />
                 <div className={`${styles.menu_list} flex-box`}>
                     <NavLink to="/" className={styles.menu_item} onClick={(e) => e.stopPropagation()}>
                         PROJECT
@@ -16,7 +16,12 @@ const TopNav = () => {
                         DEMO
                     </NavLink>
                 </div>
-                <a href="https://github.com/Snail-Lu/portfolio-react" className={styles.icon_github} target="_blank">
+                <a
+                    href="https://github.com/Snail-Lu/portfolio-react"
+                    className={styles.icon_github}
+                    target="_blank"
+                    rel="noreferrer"
+                >
                     <span className="iconfont icon-github" style={{ 'font-size': '2.5rem' }}></span>
                 </a>
             </div>

@@ -356,7 +356,7 @@ export default class AudioPlayer extends Component {
                             return (
                                 <p
                                     className={`${styles.lyric_text} ${
-                                        currentLine == lyricIndex ? styles.lyric_text_current : ''
+                                        currentLine === lyricIndex ? styles.lyric_text_current : ''
                                     }`}
                                     ref={(lyricDom) => {
                                         this.lyricDom = lyricDom
