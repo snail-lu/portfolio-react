@@ -5,7 +5,7 @@
     align-items: center;
     color: #000;
     width: 100%;
-    padding: 1.5rem 5rem 1.5rem;
+    padding: 1.5rem 20% 1.5rem;
     box-sizing: border-box;
     background-color: #0099cc;
     border-bottom: 1px solid #b1b1b1;
@@ -14,56 +14,27 @@
     left: 0;
     z-index: 9999;
 
-    .menu_bar {
-        cursor: pointer;
-        position: relative;
+    .logo {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .menu_list {
+        transition: all 2s linear;
         padding-left: 3.4rem;
+    }
+
+    .menu_item {
+        margin-right: 2.5rem;
         user-select: none;
+    }
 
-        .menu_list {
-            display: flex;
-            transition: all 2s linear;
-        }
-
-        &.active {
-            &::before {
-                top: 50%;
-                transform-origin: center;
-                transform: rotate(45deg);
-            }
-            &::after {
-                top: 50%;
-                transform-origin: center;
-                transform: rotate(-45deg);
-            }
-        }
-
-        &::before, &::after{
-            content: "";
-            display: block;
-            width: 2.5rem;
-            height: 2px;
-            background-color: #000;
-            position: absolute;
-            transition: all 0.6s linear;
-        }
-        &::before {
-            top: 34%;
-            left: 0;
-        }
-        &:after {
-            left: 0;
-            bottom: 30%;
-        }
-
-        .menu_item {
-            margin-right: 2.5rem;
-            user-select: none;
-            &.selected{
-                position: relative;
-                color: #fff;
-            }
-        }
+    .icon_github {
+        // font-size: 2.5rem;
+        position: absolute;
+        color: red;
+        top: 50%;
+        right: 3rem;
+        transform: translateY(-50%);
     }
 }
-
