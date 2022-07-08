@@ -1,9 +1,7 @@
 import React from 'react'
-import Home from '../pages/Home/Home'
 import Layout from '../components/Layout/Layout'
 const Projects = React.lazy(() => import('../pages/Projects/Projects'))
 const DemoList = React.lazy(() => import('../pages/DemoList/DemoList'))
-const About = React.lazy(() => import('../pages/About/About'))
 const AudioPlayer = React.lazy(() => import('../components/AudioPlayer/AudioPlayer'))
 const DigitalClock = React.lazy(() => import('../components/DigitalClock/DigitalClock'))
 const PointerClock = React.lazy(() => import('../components/PointerClock/PointerClock'))
@@ -16,22 +14,10 @@ const routeConfig = [
         element: <Layout />,
         children: [
             {
-                index: true,
-                element: <Home />
-            },
-            {
-                path: '/projects',
+                path: '/',
                 element: (
                     <React.Suspense fallback={<>...</>}>
                         <Projects />
-                    </React.Suspense>
-                )
-            },
-            {
-                path: '/about',
-                element: (
-                    <React.Suspense fallback={<>...</>}>
-                        <About />
                     </React.Suspense>
                 )
             },
