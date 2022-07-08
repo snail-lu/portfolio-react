@@ -6,7 +6,10 @@ import store from './redux/store'
 import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
+import request from './utils/request'
 
+// request挂载全局
+React.Component.prototype.req = request
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
     <React.StrictMode>
