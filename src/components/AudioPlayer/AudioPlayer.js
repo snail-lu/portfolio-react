@@ -399,17 +399,17 @@ export default class AudioPlayer extends Component {
 
                     {/* 播放控制 */}
                     <div className={`${styles.controls} ${styles.flex_center}`}>
-                        <span className={styles.prev + ' iconfont icon-shangyishou'} title="previous"></span>
+                        <span className={styles.prev + ' iconfont icon-prev'} title="previous"></span>
                         <span
-                            className={`${styles.switch} iconfont ${paused ? 'icon-bofang' : 'icon-zanting'}`}
+                            className={`${styles.switch} iconfont ${paused ? 'icon-play' : 'icon-pause'}`}
                             onClick={this.playControl}
                         ></span>
-                        <span className={styles.next + ' iconfont icon-xiayishou'} title="next"></span>
+                        <span className={styles.next + ' iconfont icon-next'} title="next"></span>
 
                         {/* 音量调节 */}
                         <div className={styles.volume}>
                             <span
-                                className={`${styles.volume_icon} iconfont icon-danseshixintubiao-`}
+                                className={`${styles.volume_icon} iconfont icon-volume`}
                                 onClick={this.changeVolumeControlsVisible}
                             ></span>
                             {volumeControlsVisible && (
