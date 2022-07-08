@@ -22,7 +22,7 @@ const TopNav = () => {
                     target="_blank"
                     rel="noreferrer"
                 >
-                    <span className="iconfont icon-github" style={{ 'font-size': '2.5rem' }}></span>
+                    <span className="iconfont icon-github" style={{ fontSize: '2.5rem' }}></span>
                 </a>
             </div>
             <div></div>
