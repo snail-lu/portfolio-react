@@ -26,36 +26,51 @@ export default class Projects extends Component {
             <div className={styles.projectsContainer}>
                 {this.state.projectList.map((project, index) => {
                     return (
-                        <div className={`${styles.project_item} flex-box`} key={project.github}>
-                            <div className={`${styles.box_l} flex-item-2`}>
-                                <img className={styles.screenshots} src={project.coverUrl} alt="" />
+                        <div className={`${styles.project_item} flex-box`} key={project.path}>
+                            <div className={styles.box_l}>
+                                <img className={styles.cover} src={project.coverUrl} alt="" />
                             </div>
-                            <div className={`${styles.box_c} flex-item-2`}>
-                                <div className={styles.name}>{project.title}</div>
-                                <div className={styles.tags}>
-                                    {/* {project.tags.map((tag) => (
-                                        <span className={styles.tag} key={tag}>
-                                            {tag}
-                                        </span>
-                                    ))} */}
+                            <div className={`${styles.box_r} flex-item-1 flex-box-column flex-box-h-between`}>
+                                <div>
+                                    <div className={styles.name}>{project.title}</div>
+                                    <div className={styles.tags}>
+                                        {project.tags.map((tag) => (
+                                            <span className={styles.tag} key={tag}>
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
+                                    <div className={styles.desc}>{project.desc}</div>
                                 </div>
-                                <div className={styles.desc}>{project.desc}</div>
-                                {/* <div className={styles.date}>{project.date}</div> */}
-                            </div>
-                            <div
-                                className={`${styles.box_r} flex-box-column flex-box-h-center flex-box-v-center flex-item-1`}
-                            >
-                                <a
-                                    className={styles.btn}
-                                    href={project.github}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    Github
-                                </a>
-                                <a className={styles.btn} href={project.url} target="_blank" rel="noopener noreferrer">
-                                    在线预览
-                                </a>
+
+                                <div className="flex-box flex-box-h-between flex-box-v-center">
+                                    <div>
+                                        <a
+                                            className={styles.btn}
+                                            href={project.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            title="项目github"
+                                        >
+                                            <span className="iconfont icon-github" style={{ fontSize: '2rem' }}></span>
+                                        </a>
+                                        {project.url && (
+                                            <a
+                                                className={styles.btn}
+                                                href={project.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                title="线上地址"
+                                            >
+                                                <span
+                                                    className="iconfont icon-entrance"
+                                                    style={{ fontSize: '2rem' }}
+                                                ></span>
+                                            </a>
+                                        )}
+                                    </div>
+                                    <div className={styles.date}>{project.date}</div>
+                                </div>
                             </div>
                         </div>
                     )

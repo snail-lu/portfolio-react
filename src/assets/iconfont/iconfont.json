@@ -1,0 +1,86 @@
+{
+  "id": "2304099",
+  "name": "portfolio-react/vue",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "portfolio-react及portfolio-vue项目所用图标",
+  "glyphs": [
+    {
+      "icon_id": "4034146",
+      "name": "零售门户-入口",
+      "font_class": "rukou",
+      "unicode": "e668",
+      "unicode_decimal": 58984
+    },
+    {
+      "icon_id": "18171099",
+      "name": "纸飞机,折纸,发送",
+      "font_class": "entrance",
+      "unicode": "ea0b",
+      "unicode_decimal": 59915
+    },
+    {
+      "icon_id": "26850215",
+      "name": "音量",
+      "font_class": "volume",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "2076218",
+      "name": "播放2",
+      "font_class": "play",
+      "unicode": "e87c",
+      "unicode_decimal": 59516
+    },
+    {
+      "icon_id": "4956289",
+      "name": "暂停",
+      "font_class": "pause",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "7417086",
+      "name": "上一首",
+      "font_class": "prev",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
+      "icon_id": "7417092",
+      "name": "下一首",
+      "font_class": "next",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "736678",
+      "name": "email",
+      "font_class": "email",
+      "unicode": "e684",
+      "unicode_decimal": 59012
+    },
+    {
+      "icon_id": "2041684",
+      "name": "CN_cnblogs",
+      "font_class": "cnblogs",
+      "unicode": "e64d",
+      "unicode_decimal": 58957
+    },
+    {
+      "icon_id": "3176645",
+      "name": "GitHub",
+      "font_class": "github",
+      "unicode": "ea0a",
+      "unicode_decimal": 59914
+    },
+    {
+      "icon_id": "10582815",
+      "name": "官方网站",
+      "font_class": "site",
+      "unicode": "e67b",
+      "unicode_decimal": 59003
+    }
+  ]
+}
