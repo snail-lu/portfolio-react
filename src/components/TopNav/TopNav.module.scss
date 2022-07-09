@@ -7,8 +7,11 @@
     width: 100%;
     padding: 1.5rem 20% 1.5rem;
     box-sizing: border-box;
-    background-color: #0099cc;
-    border-bottom: 1px solid #b1b1b1;
+    // background-color: #0099cc;
+    background-color: rgba(0, 153, 204, 0.15);
+    backdrop-filter: blur(12px) saturate(100%);
+    // background-color: rgba(245, 244, 241, 0.25);
+    // border-bottom: 1px solid #b1b1b1;
     position: sticky;
     top: 0;
     left: 0;
