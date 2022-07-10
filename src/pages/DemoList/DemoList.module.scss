@@ -1,13 +1,14 @@
 .demo_list_container {
-  width: 100%;
+  width: 60%;
   height: 100%;
-  padding: 2rem 5rem;
+  padding: 2rem 0;
   box-sizing: border-box;
+  margin: 0 auto;
 
   .demo_list {
     display: grid;
-    grid-template-columns: repeat(4, 23.5%);
-    gap: 4% 2%;
+    grid-template-columns: repeat(3, 30%);
+    gap: 5% 5%;
   }
   .demo_item {
     font-size: 1.6rem;
