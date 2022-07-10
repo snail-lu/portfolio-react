@@ -1,8 +1,7 @@
 import React from 'react'
 import Layout from '../components/Layout/Layout'
 const Projects = React.lazy(() => import('../pages/Projects/Projects'))
-// const DemoList = React.lazy(() => import('../pages/DemoList/DemoList'))
-const DemoList = React.lazy(() => import('../pages/DemoList/Demos'))
+const DemoList = React.lazy(() => import('../pages/DemoList/DemoList'))
 const AudioPlayer = React.lazy(() => import('../components/AudioPlayer/AudioPlayer'))
 const DigitalClock = React.lazy(() => import('../components/DigitalClock/DigitalClock'))
 const PointerClock = React.lazy(() => import('../components/PointerClock/PointerClock'))

@@ -1,73 +1,67 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { NavLink } from 'react-router-dom'
+import React, { Component } from 'react'
 import styles from './DemoList.module.scss'
-import { connect } from 'react-redux'
-import { requestDemoList } from '../../redux/actions'
+import { NavLink } from 'react-router-dom'
+// import projectList from '../../config/project-list'
 
-const DemoList = ({ getDemoList, list }) => {
-    getDemoList()
-    return (
-        <div className={styles.demo_list_container}>
-            <div className={styles.demo_list}>
-                {list.map((item) => {
+export default class DemoList extends Component {
+    state = {
+        demoList: []
+    }
+    componentDidMount() {
+        this.getDemoList()
+    }
+
+    getDemoList = async () => {
+        let res = await this.req({
+            url: '/demo/list2'
+        })
+        if (res.data && res.data.list) {
+            this.setState({
+                demoList: res.data.list
+            })
+        }
+    }
+
+    render() {
+        return (
+            <div className={styles.projectsContainer}>
+                {this.state.demoList.map((demo) => {
                     return (
-                        <div className={styles.demo_item} key={item.route}>
-                            <div className={styles.header}>
-                                {item.completed ? (
-                                    <NavLink to={`/demo/${item.route}`} className={styles.view_btn}>
-                                        预览
-                                    </NavLink>
-                                ) : (
-                                    <span className={styles.development}>开发中</span>
-                                )}
+                        <div className={`${styles.project_item} flex-box`} key={demo.path}>
+                            <div className={styles.box_l}>
+                                <img className={styles.cover} src={demo.coverUrl} alt="" />
                             </div>
-                            <div className={styles.info}>
-                                <div className={styles.name}>{item.name}</div>
-                                <div className={styles.tags_list}>
-                                    {item.tags.map((tag) => {
-                                        return (
-                                            <span className={styles.tags_item} key={tag}>
+                            <div className={`${styles.box_r} flex-item-1 flex-box-column flex-box-h-between`}>
+                                <div>
+                                    <div className={styles.name}>{demo.title}</div>
+                                    <div className={styles.tags}>
+                                        {demo.tags.map((tag) => (
+                                            <span className={styles.tag} key={tag}>
                                                 {tag}
                                             </span>
-                                        )
-                                    })}
+                                        ))}
+                                    </div>
+                                    <div className={styles.desc}>{demo.desc}</div>
                                 </div>
-                                <div className={styles.desc}>{item.desc}</div>
-                                <div className={styles.date}>{item.date}</div>
+
+                                <div className="flex-box flex-box-h-between flex-box-v-center">
+                                    <div>
+                                        {demo.path && (
+                                            <NavLink to={`/demo/${demo.path}`}>
+                                                <span
+                                                    className="iconfont icon-entrance"
+                                                    style={{ fontSize: '2rem' }}
+                                                ></span>
+                                            </NavLink>
+                                        )}
+                                    </div>
+                                    <div className={styles.date}>{demo.date}</div>
+                                </div>
                             </div>
                         </div>
                     )
                 })}
             </div>
-        </div>
-    )
-}
-
-const mapStateToProps = (state) => {
-    return {
-        list: state.demoList ? state.demoList : []
+        )
     }
 }
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        getDemoList: (type) => {
-            dispatch(requestDemoList())
-        }
-    }
-}
-
-DemoList.propTypes = {
-    list: PropTypes.arrayOf(
-        PropTypes.shape({
-            date: PropTypes.string.isRequired,
-            name: PropTypes.string.isRequired,
-            desc: PropTypes.string.isRequired,
-            tags: PropTypes.array.isRequired
-        }).isRequired
-    ).isRequired,
-    getDemoList: PropTypes.func.isRequired
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(DemoList)
