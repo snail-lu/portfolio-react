@@ -315,6 +315,9 @@ export default class AudioPlayer extends Component {
     // 结束时
     onEnd = () => {
         this.setState({
+            paused: true,
+            currentTime: 0,
+            playedTime: '00:00',
             currentLine: 0,
             lyricPosition: '0'
         })
