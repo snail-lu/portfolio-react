@@ -67,3 +67,25 @@ $bg-color: #b7d4a8;
     justify-content: space-between;
   }
 }
+
+.introduce_container {
+  width: 160px;
+  margin: 20px auto 0;
+
+  .title {
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .usage {
+    text-align: center;
+  }
+
+  .label {
+    display: inline-block;
+    width: 80px;
+    font-weight: bold;
+    text-align: right;
+  }
+}

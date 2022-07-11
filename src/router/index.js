@@ -6,6 +6,7 @@ const AudioPlayer = React.lazy(() => import('../components/AudioPlayer/AudioPlay
 const DigitalClock = React.lazy(() => import('../components/DigitalClock/DigitalClock'))
 const PointerClock = React.lazy(() => import('../components/PointerClock/PointerClock'))
 const GreedySnake = React.lazy(() => import('../components/GreedySnake/GreedySnake'))
+const Introduce = React.lazy(() => import('../components/GreedySnake/Introduce'))
 const DemoLayout = React.lazy(() => import('../components/DemoLayout/DemoLayout'))
 
 const routeConfig = [
@@ -66,6 +67,7 @@ const routeConfig = [
                     <React.Suspense fallback={<>...</>}>
                         <DemoLayout title="贪吃蛇">
                             <GreedySnake />
+                            <Introduce />
                         </DemoLayout>
                     </React.Suspense>
                 )
