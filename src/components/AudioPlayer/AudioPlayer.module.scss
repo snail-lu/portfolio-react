@@ -59,12 +59,15 @@
             animation: all 2s;
             .lyric_text {
                 color: #999;
-                line-height: 1.8;
+                line-height: 2.5rem;
+                height: 2.5rem;
                 font-size: 1.4rem;
                 margin-bottom: 0;
                 &_current {
                     color: #fff;
                     font-size: 1.6rem;
+                    height: 3rem;
+                    line-height: 3rem;
                 }
             }
         }

@@ -290,7 +290,7 @@ export default class AudioPlayer extends Component {
         currentTime_m = currentTime_m >= 10 ? currentTime_m : '0' + currentTime_m
         currentTime_s = currentTime_s >= 10 ? currentTime_s : '0' + currentTime_s
 
-        const lyricHeight = this.lyricDom.clientHeight
+        const lyricHeight = 25
 
         let { currentLine, lyricPosition } = this.state
         // 歌词位置移动
@@ -361,9 +361,6 @@ export default class AudioPlayer extends Component {
                                     className={`${styles.lyric_text} ${
                                         currentLine === lyricIndex ? styles.lyric_text_current : ''
                                     }`}
-                                    ref={(lyricDom) => {
-                                        this.lyricDom = lyricDom
-                                    }}
                                     key={lyric.t}
                                 >
                                     {lyric.c}
@@ -431,8 +428,6 @@ export default class AudioPlayer extends Component {
                     </div>
                 </div>
                 <audio
-                    id={styles.music1}
-                    loop={true}
                     src={audioUrl}
                     ref={(audio) => {
                         this.audio = audio
