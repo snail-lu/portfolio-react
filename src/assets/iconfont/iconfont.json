@@ -6,6 +6,13 @@
   "description": "portfolio-react及portfolio-vue项目所用图标",
   "glyphs": [
     {
+      "icon_id": "9606432",
+      "name": "音乐演奏",
+      "font_class": "music",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
       "icon_id": "4034146",
       "name": "零售门户-入口",
       "font_class": "rukou",
