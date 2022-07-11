@@ -334,7 +334,10 @@ export default class AudioPlayer extends Component {
         } = this.state
         return (
             <div className={styles.music_container}>
-                <div className={styles.header}>音乐播放器</div>
+                <div className={`${styles.header} flex-box flex-box-v-center`}>
+                    <span className={`${styles.logo} iconfont icon-music`}></span>
+                    音乐播放器
+                </div>
                 <div className={styles.content}>
                     {/* CD机 */}
                     <div className={`${styles.disc}  ${styles.flex_center}`}>
