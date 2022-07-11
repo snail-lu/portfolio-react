@@ -87,7 +87,7 @@
         .controls {
             position: relative;
             .switch {
-                font-size: 35px;
+                font-size: 30px;
                 line-height: 50px;
                 text-align: center;
                 cursor: pointer;
@@ -159,5 +159,11 @@
     }
     to {
         transform: rotate(360deg);
+    }
+}
+
+:global {
+    .ant-slider {
+        margin: 4px 6px 4px;
     }
 }
