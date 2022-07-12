@@ -1,13 +1,21 @@
-import React, { Component } from 'react';
-import styles from './GreedySnake.module.scss';
-import GameControl from './GameControl';
+import React, { Component } from 'react'
+import styles from './GreedySnake.module.scss'
+import GameControl from './GameControl'
 
 class GreedySnake extends Component {
-    constructor(props) {
-        super(props)
-    }
     componentDidMount() {
         new GameControl()
+        window.addEventListener('keydown', this.handleSpace)
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('keydown', this.handleSpace)
+    }
+
+    handleSpace = (e) => {
+        if (e.code === 'Space') {
+            e.preventDefault()
+        }
     }
 
     render() {
@@ -19,10 +27,10 @@ class GreedySnake extends Component {
                     {/* 蛇 */}
                     <div className={styles.snake} id="snake">
                         {/* 蛇头 */}
-                        <div id = "snake_head"></div>
+                        <div id="snake_head"></div>
                         {/* 蛇体，动态添加 */}
                     </div>
-        
+
                     {/* 食物 */}
                     <div id="food" className={styles.food}>
                         {/* 添加四个小div 来设置食物的样式 */}
@@ -32,7 +40,7 @@ class GreedySnake extends Component {
                         <div></div>
                     </div>
                 </div>
-        
+
                 {/* 积分牌 */}
                 <div id="score-panel" className={styles.scorePanel}>
                     <div>
@@ -47,5 +55,4 @@ class GreedySnake extends Component {
     }
 }
 
-
-export default GreedySnake;
+export default GreedySnake
