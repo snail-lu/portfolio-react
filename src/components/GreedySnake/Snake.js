@@ -14,9 +14,9 @@ class Snake extends Component {
     }
 
     componentDidMount() {
-        this.snake = document.getElementById('snake');
-        this.head = document.getElementById('snake_head');
-        this.bodies = this.snake.getElementsByTagName('div');
+        // this.snake = document.getElementById('snake');
+        // this.head = document.getElementById('snake_head');
+        // this.bodies = this.snake.getElementsByTagName('div');
     }
 
     // 获取蛇头坐标
@@ -112,11 +112,18 @@ class Snake extends Component {
     }
 
     render() {
+        const { data = [] } = this.props;
         return (
-            <div className={styles.snake} id="snake">
-                {/* 蛇头 */}
-                <div id="snake_head"></div>
-                {/* 蛇体，动态添加 */}
+            <div className={styles.snake}>
+                {data.map(({ left, top }) => {
+                    return (
+                        <div
+                            className={styles.snake_item}
+                            style={{ left: left + 'px', top: top + 'px' }}
+                            key={`${left}${top}`}
+                        ></div>
+                    );
+                })}
             </div>
         );
     }

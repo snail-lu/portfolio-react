@@ -23,7 +23,7 @@ $bg-color: #b7d4a8;
 
     // 设置蛇的样式
     .snake {
-      & > div {
+      &_item {
         width: 10px;
         height: 10px;
         background-color: #000;
