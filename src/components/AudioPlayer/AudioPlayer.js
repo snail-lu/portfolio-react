@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
-import { Slider } from 'antd'
-import styles from './AudioPlayer.module.scss'
-import audioUrl from '../../assets/music/有何不可.mp3'
-import coverUrl from '../../assets/images/music_cover.jpg'
+import React, { Component } from 'react';
+import { Slider } from 'antd';
+import styles from './AudioPlayer.module.scss';
+import audioUrl from '../../assets/music/有何不可.mp3';
+import coverUrl from '../../assets/images/music_cover.jpg';
 
 export default class AudioPlayer extends Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             paused: true, // 音频是否暂停
             currentTime: 0, // 已播放时间（未转换）
@@ -229,88 +229,94 @@ export default class AudioPlayer extends Component {
                 }
             ],
             volumeControlsVisible: false // 显示音量调节器
-        }
+        };
     }
 
-    componentDidMount() {}
+    componentDidMount() {
+        console.log('audio player mount');
+    }
+
+    componentWillUnmount() {
+        console.log('audio player unmount');
+    }
 
     // 播放/暂停
     playControl = () => {
         if (this.audio.paused) {
-            this.audio.play()
+            this.audio.play();
         } else {
-            this.audio.pause()
+            this.audio.pause();
         }
         this.setState({
             paused: this.audio.paused
-        })
-    }
+        });
+    };
 
     // 音量调节
     adjustVolume = (value) => {
-        let audio = this.audio
-        audio.volume = value
-    }
+        let audio = this.audio;
+        audio.volume = value;
+    };
 
     // 调节进度
     adjustProgress = (value) => {
-        let audio = this.audio
-        audio.currentTime = value
-    }
+        let audio = this.audio;
+        audio.currentTime = value;
+    };
 
     // 显示/隐藏音量调节框
     changeVolumeControlsVisible = () => {
-        const { volumeControlsVisible } = this.state
+        const { volumeControlsVisible } = this.state;
         this.setState({
             volumeControlsVisible: !volumeControlsVisible
-        })
-    }
+        });
+    };
 
     // canPlay监听
     canPlay = () => {
-        let duration = Math.round(this.audio.duration)
-        let duration_m = Math.floor(duration / 60)
-        let duration_s = Math.floor(duration % 60)
+        let duration = Math.round(this.audio.duration);
+        let duration_m = Math.floor(duration / 60);
+        let duration_s = Math.floor(duration % 60);
 
-        duration_m = duration_m >= 10 ? duration_m : '0' + duration_m
-        duration_s = duration_s >= 10 ? duration_s : '0' + duration_s
+        duration_m = duration_m >= 10 ? duration_m : '0' + duration_m;
+        duration_s = duration_s >= 10 ? duration_s : '0' + duration_s;
 
         this.setState({
             duration,
             totalTime: duration_m + ':' + duration_s
-        })
-    }
+        });
+    };
 
     // timeUpdate监听，更新播放时长与进度条
     timeUpdate = () => {
-        let currentTime = Math.round(this.audio.currentTime)
-        let currentTime_m = Math.floor(currentTime / 60)
-        let currentTime_s = Math.floor(currentTime % 60)
+        let currentTime = Math.round(this.audio.currentTime);
+        let currentTime_m = Math.floor(currentTime / 60);
+        let currentTime_s = Math.floor(currentTime % 60);
 
-        currentTime_m = currentTime_m >= 10 ? currentTime_m : '0' + currentTime_m
-        currentTime_s = currentTime_s >= 10 ? currentTime_s : '0' + currentTime_s
+        currentTime_m = currentTime_m >= 10 ? currentTime_m : '0' + currentTime_m;
+        currentTime_s = currentTime_s >= 10 ? currentTime_s : '0' + currentTime_s;
 
-        const lyricHeight = 25
+        const lyricHeight = 25;
 
-        let { currentLine, lyricPosition } = this.state
+        let { currentLine, lyricPosition } = this.state;
         // 歌词位置移动
         this.state.lyricArray.forEach((lyricItem, lyricIndex) => {
-            let currentSecond = Math.floor(currentTime)
+            let currentSecond = Math.floor(currentTime);
             if (currentSecond === lyricItem.t) {
-                currentLine = lyricIndex
+                currentLine = lyricIndex;
                 if (currentLine * lyricHeight >= 150) {
-                    lyricPosition = -(currentLine * lyricHeight - 150) + 'px'
+                    lyricPosition = -(currentLine * lyricHeight - 150) + 'px';
                 }
             }
-        })
+        });
 
         this.setState({
             currentLine,
             lyricPosition,
             currentTime,
             playedTime: currentTime_m + ':' + currentTime_s
-        })
-    }
+        });
+    };
 
     // 结束时
     onEnd = () => {
@@ -320,8 +326,8 @@ export default class AudioPlayer extends Component {
             playedTime: '00:00',
             currentLine: 0,
             lyricPosition: '0'
-        })
-    }
+        });
+    };
 
     render() {
         let {
@@ -334,7 +340,7 @@ export default class AudioPlayer extends Component {
             currentLine,
             volumeControlsVisible,
             currentTime
-        } = this.state
+        } = this.state;
         return (
             <div className={styles.music_container}>
                 <div className={`${styles.header} flex-box flex-box-v-center`}>
@@ -368,7 +374,7 @@ export default class AudioPlayer extends Component {
                                 >
                                     {lyric.c}
                                 </p>
-                            )
+                            );
                         })}
                     </div>
                 </div>
@@ -433,7 +439,7 @@ export default class AudioPlayer extends Component {
                 <audio
                     src={audioUrl}
                     ref={(audio) => {
-                        this.audio = audio
+                        this.audio = audio;
                     }}
                     onTimeUpdate={this.timeUpdate}
                     onCanPlay={this.canPlay}
@@ -442,6 +448,6 @@ export default class AudioPlayer extends Component {
                     Your browser does not support the<code>audio</code> element.
                 </audio>
             </div>
-        )
+        );
     }
 }
