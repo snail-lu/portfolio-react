@@ -1,22 +1,25 @@
-import React, { Component } from 'react'
-import styles from './GreedySnake.module.scss'
-import GameControl from './GameControl'
+import React, { Component } from 'react';
+import styles from './GreedySnake.module.scss';
+import GameControl from './GameControl';
+import Food from './Food';
+import Snake from './Snake';
 
 class GreedySnake extends Component {
     componentDidMount() {
-        new GameControl()
-        window.addEventListener('keydown', this.handleSpace)
+        // new GameControl();
+        // window.addEventListener('keydown', this.handleSpace)
     }
 
     componentWillUnmount() {
-        window.removeEventListener('keydown', this.handleSpace)
+        // console.log('unmount');
+        // window.removeEventListener('keydown', this.handleSpace)
     }
 
-    handleSpace = (e) => {
-        if (e.code === 'Space') {
-            e.preventDefault()
-        }
-    }
+    // handleSpace = (e) => {
+    //     if (e.code === 'Space') {
+    //         e.preventDefault()
+    //     }
+    // }
 
     render() {
         return (
@@ -25,20 +28,10 @@ class GreedySnake extends Component {
                 {/* 游戏的舞台 */}
                 <div className={styles.stage} id="stage">
                     {/* 蛇 */}
-                    <div className={styles.snake} id="snake">
-                        {/* 蛇头 */}
-                        <div id="snake_head"></div>
-                        {/* 蛇体，动态添加 */}
-                    </div>
-
+                    <Snake />
+                    
                     {/* 食物 */}
-                    <div id="food" className={styles.food}>
-                        {/* 添加四个小div 来设置食物的样式 */}
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
+                    <Food />
                 </div>
 
                 {/* 积分牌 */}
@@ -51,8 +44,8 @@ class GreedySnake extends Component {
                     </div>
                 </div>
             </div>
-        )
+        );
     }
 }
 
-export default GreedySnake
+export default GreedySnake;
