@@ -1,42 +1,18 @@
 // 食物组件
 
-import { Component } from 'react';
 import styles from './GreedySnake.module.scss';
 
-class Food extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            left: 0,
-            top: 0
-        };
-    }
-
-    componentDidMount() {
-        this.changeFoodPosition();
-    }
-
-    changeFoodPosition = () => {
-        // 生成随机位置
-        let left = Math.round(Math.random() * 29) * 10;
-        let top = Math.round(Math.random() * 29) * 10;
-        this.setState({
-            left: left + 'px',
-            top: top + 'px'
-        });
-    };
-    render() {
-        const { left, top } = this.state;
-        return (
-            <div className={styles.food} style={{ left, top }}>
-                {/* 添加四个小div 来设置食物的样式 */}
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        );
-    }
+function Food(props) {
+    const { left, top } = props.position;
+    return (
+        <div className={styles.food} style={{ left: left + 'px', top: top + 'px' }}>
+            {/* 添加四个小div 来设置食物的样式 */}
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    );
 }
 // export default class Food {
 //     element;

@@ -1,11 +1,9 @@
 import Snake from './Snake';
 import Food from './Food';
-import ScorePanle from './ScorePanel';
 
 export default class GameControl {
     snake;
     food;
-    scorePanel;
     direction = 'ArrowRight'; // 移动方向，初始为向右移动
     gameOver = false; // 游戏结束
     paused = true; // 暂停状态
@@ -14,7 +12,7 @@ export default class GameControl {
     constructor() {
         this.snake = new Snake();
         this.food = new Food();
-        this.scorePanel = new ScorePanle();
+        // this.scorePanel = new ScorePanle();
         this.init();
     }
 
@@ -49,7 +47,7 @@ export default class GameControl {
             this.snake.X = 0;
             this.snake.Y = 0;
             this.food = new Food();
-            this.scorePanel = new ScorePanle();
+            // this.scorePanel = new ScorePanle();
         }
     };
 
@@ -97,17 +95,17 @@ export default class GameControl {
         }
 
         // 根据等级计算移动速度
-        let speed = 300 - (this.scorePanel.level - 1) * 30;
-        if (!this.paused && !this.gameOver) {
-            setTimeout(this.move.bind(this), speed);
-        }
+        // let speed = 300 - (this.scorePanel.level - 1) * 30;
+        // if (!this.paused && !this.gameOver) {
+        //     setTimeout(this.move.bind(this), speed);
+        // }
     }
 
     // 食物检测
     checkFood(X, Y) {
         if (X === this.food.X && Y === this.food.Y) {
             // 增加分数
-            this.scorePanel.addScore();
+            // this.scorePanel.addScore();
 
             // 刷新食物位置
             this.food.change();

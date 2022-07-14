@@ -1,24 +1,6 @@
 import { Component } from 'react';
 import styles from './GreedySnake.module.scss';
 class Snake extends Component {
-    // 蛇容器
-    snake;
-
-    // 蛇头元素
-    head;
-
-    // 蛇的身体（包括蛇头）
-    bodies;
-    constructor(props) {
-        super(props);
-    }
-
-    componentDidMount() {
-        // this.snake = document.getElementById('snake');
-        // this.head = document.getElementById('snake_head');
-        // this.bodies = this.snake.getElementsByTagName('div');
-    }
-
     // 获取蛇头坐标
     get X() {
         return this.head.offsetLeft;
@@ -83,24 +65,6 @@ class Snake extends Component {
         this.checkHeadBody();
     }
 
-    // 蛇体增长
-    addBody() {
-        this.snake.insertAdjacentHTML('beforeend', '<div></div>');
-    }
-
-    // 蛇体移动
-    moveBody() {
-        // 将后边一节蛇体的位置设置为前一节蛇体的位置
-        for (let i = this.bodies.length - 1; i > 0; i--) {
-            // 获取前一节蛇体的位置
-            let X = this.bodies[i - 1].offsetLeft;
-            let Y = this.bodies[i - 1].offsetTop;
-
-            this.bodies[i].style.left = X + 'px';
-            this.bodies[i].style.top = Y + 'px';
-        }
-    }
-
     // 检测蛇头是否与蛇体相撞
     checkHeadBody() {
         for (let i = 1; i < this.bodies.length; i++) {
@@ -115,12 +79,12 @@ class Snake extends Component {
         const { data = [] } = this.props;
         return (
             <div className={styles.snake}>
-                {data.map(({ left, top }) => {
+                {data.map(({ left, top }, index) => {
                     return (
                         <div
                             className={styles.snake_item}
                             style={{ left: left + 'px', top: top + 'px' }}
-                            key={`${left}${top}`}
+                            key={index}
                         ></div>
                     );
                 })}
