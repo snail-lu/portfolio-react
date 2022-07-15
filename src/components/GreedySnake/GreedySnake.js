@@ -80,6 +80,7 @@ class GreedySnake extends Component {
                 score: 0,
                 gameStatus: 0
             });
+            this.speed = 300;
         }
     };
 
@@ -112,9 +113,10 @@ class GreedySnake extends Component {
     // 更新蛇体数据
     updateSnakeData = (field, num) => {
         const snakeData = _.cloneDeep(this.state.snakeData);
-        // const snakeData = [...this.state.snakeData];
         const len = snakeData.length;
 
+        // 对克隆出的数据进行操作
+        // 这样在确认数据没问题前，不会影响原始数据
         if (len > 1) {
             // 将后一节蛇体的位置设置为前一节蛇体的位置
             for (let i = len - 1; i > 0; i--) {
@@ -139,6 +141,18 @@ class GreedySnake extends Component {
             });
             clearTimeout(this.timer);
             return;
+        }
+
+        // 头体相撞检测
+        for (let i = 1, len = snakeData.length; i < len; i++) {
+            let snakeBody = snakeData[i];
+            if (snakeData[0].top === snakeBody.top && snakeData[0].left === snakeBody.left) {
+                this.setState({
+                    gameStatus: 3
+                });
+                clearTimeout(this.timer);
+                return;
+            }
         }
 
         this.setState(
