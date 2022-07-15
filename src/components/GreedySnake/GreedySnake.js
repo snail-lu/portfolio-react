@@ -1,15 +1,17 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import styles from './GreedySnake.module.scss';
-// import GameControl from './GameControl';
 import Food from './Food';
 import Snake from './Snake';
+import GameStatus from './GameStatus';
+import _ from 'lodash';
 
 class GreedySnake extends Component {
     direction = 'ArrowRight'; // 移动方向，初始为向右移动
     directionKeyCode = ['ArrowUp', 'ArrowLeft', 'ArrowRight', 'ArrowDown', 'KeyA', 'KeyS', 'KeyD', 'KeyW'];
-
+    speed = 300; // 移动速度
     maxLevel = 10; // 最大等级
     levelThreshold = 2; // 每升一级所需分数
+    timer = null;
 
     constructor() {
         super();
@@ -18,13 +20,13 @@ class GreedySnake extends Component {
             // 蛇体数据
             snakeData: [
                 {
-                    left: 0,
+                    left: 270,
                     top: 0
                 }
             ],
             level: 1, // 当前等级
             score: 0, // 当前分数
-            gameStatus: 0, // 游戏状态  0 暂停， 1 进行中， 2 已结束
+            gameStatus: 0, // 游戏状态  0 初始状态， 1 进行中， 2 已暂停， 3 已结束
             // 食物位置
             foodPosition: {
                 left: '0px',
@@ -55,21 +57,29 @@ class GreedySnake extends Component {
         if (isDirectionKey && gameStatus === 1) {
             // 方向切换
             this.direction = code;
-        } else if (code === 'Space' && gameStatus !== 2) {
+        } else if (code === 'Space' && gameStatus !== 3) {
             // 暂停/开始切换
-            gameStatus = gameStatus === 1 ? 0 : 1;
+            gameStatus = gameStatus === 1 ? 2 : 1;
             this.setState({ gameStatus }, () => {
                 if (this.state.gameStatus === 1) {
                     this.move();
+                } else {
+                    clearTimeout(this.timer);
                 }
             });
         } else if (code === 'KeyR') {
             // 复位操作
-            // this.snake = new Snake();
-            // this.snake.X = 0;
-            // this.snake.Y = 0;
-            // this.food = new Food();
-            // this.scorePanel = new ScorePanle();
+            this.setState({
+                snakeData: [
+                    {
+                        left: 0,
+                        top: 0
+                    }
+                ],
+                level: 1,
+                score: 0,
+                gameStatus: 0
+            });
         }
     };
 
@@ -97,21 +107,12 @@ class GreedySnake extends Component {
             default:
                 break;
         }
-
-        // 食物检测
-        this.checkFood();
-
-        // 根据等级计算移动速度
-        const { level, gameStatus } = this.state;
-        let speed = 300 - (level - 1) * 30;
-        if (gameStatus === 1) {
-            setTimeout(this.move.bind(this), speed);
-        }
     };
 
     // 更新蛇体数据
     updateSnakeData = (field, num) => {
-        const { snakeData } = this.state;
+        const snakeData = _.cloneDeep(this.state.snakeData);
+        // const snakeData = [...this.state.snakeData];
         const len = snakeData.length;
 
         if (len > 1) {
@@ -134,12 +135,23 @@ class GreedySnake extends Component {
         // 撞墙检测
         if (snakeData[0].left < 0 || snakeData[0].top < 0 || snakeData[0].left > 290 || snakeData[0].top > 290) {
             this.setState({
-                gameStatus: 2
+                gameStatus: 3
             });
+            clearTimeout(this.timer);
+            return;
         }
-        this.setState({
-            snakeData
-        });
+
+        // 食物检测
+        this.checkFood(snakeData);
+
+        this.setState(
+            {
+                snakeData
+            },
+            () => {
+                this.timer = setTimeout(this.move.bind(this), this.speed);
+            }
+        );
     };
 
     // 增加蛇体数据
@@ -179,10 +191,9 @@ class GreedySnake extends Component {
     };
 
     // 食物检测
-    checkFood() {
-        const { snakeData, foodPosition } = this.state;
+    checkFood(snakeData) {
+        const { foodPosition } = this.state;
         const snakeHead = snakeData[0];
-        // debugger;
         if (snakeHead.top === foodPosition.top && snakeHead.left === foodPosition.left) {
             // 增加分数
             this.addScore();
@@ -203,6 +214,8 @@ class GreedySnake extends Component {
         if (level < this.maxLevel) {
             newLevel = Math.floor(score / this.levelThreshold) + 1;
         }
+        // 计算移动速度
+        this.speed = 300 - (level - 1) * 30;
         this.setState({
             score,
             level: newLevel
@@ -229,9 +242,9 @@ class GreedySnake extends Component {
             <div className={styles.main}>
                 {/* 游戏的舞台 */}
                 <div className={styles.stage}>
-                    {gameStatus !== 1 && (
-                        <div className={styles.game_status}>{gameStatus === 0 ? '游戏暂停' : '游戏结束'}</div>
-                    )}
+                    {/* 游戏状态 */}
+                    <GameStatus status={gameStatus} />
+
                     {/* 蛇 */}
                     <Snake data={snakeData} />
 

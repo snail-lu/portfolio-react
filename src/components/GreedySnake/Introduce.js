@@ -22,7 +22,7 @@ export default function Introduce() {
                     <span className={styles.label}>D、→键：</span>向右
                 </li>
                 <li>
-                    <span className={styles.label}>R键：</span>重新开始
+                    <span className={styles.label}>R键：</span>复位
                 </li>
             </ul>
         </div>
