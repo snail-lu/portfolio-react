@@ -20,7 +20,7 @@ class GreedySnake extends Component {
             // 蛇体数据
             snakeData: [
                 {
-                    left: 270,
+                    left: 0,
                     top: 0
                 }
             ],
@@ -141,14 +141,13 @@ class GreedySnake extends Component {
             return;
         }
 
-        // 食物检测
-        this.checkFood(snakeData);
-
         this.setState(
             {
                 snakeData
             },
             () => {
+                // 食物检测
+                this.checkFood();
                 this.timer = setTimeout(this.move.bind(this), this.speed);
             }
         );
@@ -156,7 +155,7 @@ class GreedySnake extends Component {
 
     // 增加蛇体数据
     addSnakeData = () => {
-        const { snakeData } = this.state;
+        const snakeData = _.cloneDeep(this.state.snakeData);
         const snakeTail = snakeData[snakeData.length - 1];
         let newSnakeTail = {
             top: snakeTail.top,
@@ -191,8 +190,8 @@ class GreedySnake extends Component {
     };
 
     // 食物检测
-    checkFood(snakeData) {
-        const { foodPosition } = this.state;
+    checkFood() {
+        const { foodPosition, snakeData } = this.state;
         const snakeHead = snakeData[0];
         if (snakeHead.top === foodPosition.top && snakeHead.left === foodPosition.left) {
             // 增加分数
