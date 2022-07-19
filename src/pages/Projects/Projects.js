@@ -1,25 +1,25 @@
-import React, { Component } from 'react'
-import styles from './Projects.module.scss'
+import React, { Component } from 'react';
+import styles from './Projects.module.scss';
 // import projectList from '../../config/project-list'
 
 export default class Projects extends Component {
     state = {
         projectList: []
-    }
+    };
     componentDidMount() {
-        this.getProjectList()
+        this.getProjectList();
     }
 
     getProjectList = async () => {
         let res = await this.req({
             url: '/project/list'
-        })
-        if (res.data && res.data.list) {
+        });
+        if (res.result && res.result.list) {
             this.setState({
-                projectList: res.data.list
-            })
+                projectList: res.result.list
+            });
         }
-    }
+    };
 
     render() {
         return (
@@ -73,9 +73,9 @@ export default class Projects extends Component {
                                 </div>
                             </div>
                         </div>
-                    )
+                    );
                 })}
             </div>
-        )
+        );
     }
 }

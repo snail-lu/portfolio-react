@@ -1,26 +1,26 @@
-import React, { Component } from 'react'
-import styles from './DemoList.module.scss'
-import { NavLink } from 'react-router-dom'
+import React, { Component } from 'react';
+import styles from './DemoList.module.scss';
+import { NavLink } from 'react-router-dom';
 // import projectList from '../../config/project-list'
 
 export default class DemoList extends Component {
     state = {
         demoList: []
-    }
+    };
     componentDidMount() {
-        this.getDemoList()
+        this.getDemoList();
     }
 
     getDemoList = async () => {
         let res = await this.req({
             url: '/demo/list2'
-        })
-        if (res.data && res.data.list) {
+        });
+        if (res.result && res.result.list) {
             this.setState({
-                demoList: res.data.list
-            })
+                demoList: res.result.list
+            });
         }
-    }
+    };
 
     render() {
         return (
@@ -59,9 +59,9 @@ export default class DemoList extends Component {
                                 </div>
                             </div>
                         </div>
-                    )
+                    );
                 })}
             </div>
-        )
+        );
     }
 }
